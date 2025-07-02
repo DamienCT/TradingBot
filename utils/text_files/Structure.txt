@@ -1,0 +1,33 @@
+TradingBot/                        # Root folder of the project
+├── config/                        # Configuration files
+│   └── config.json                # All user‐defined parameters (scanner criteria, adaptive thresholds, IBKR API credentials, email settings, backtesting parameters, etc.)
+│
+├── core/                          # Core trading logic and workflow modules
+│   ├── main.py                    # Main entry point for launching the live trading system
+│   ├── trade_execution.py         # IBKR API integration (order placement, execution, callbacks, failover, etc.)
+│   ├── data_fetcher.py            # Module for retrieving live and historical market data and computing technical indicators
+│   ├── scanner.py                 # Market scanning module (pre‐market scanning to select potential stocks)
+│   ├── strategy.py                # Core strategy logic that segregates symbols into Buy and Sell modes, computes ranking scores, triggers orders, etc.
+│   └── trade_logger.py            # Module to create and manage per-symbol trade logs (logging all data from entry to exit for each trade)
+│
+├── ai_models/                     # Artificial intelligence and machine learning modules
+│   ├── finbert_model.py           # Loads and runs FinBERT for sentiment analysis on news headlines
+│   └── chatgpt_interface.py       # (Optional) Integration with OpenAI ChatGPT for daily update messaging and possibly trade validation
+│
+├── backtesting/                   # Modules for running simulation/backtesting
+│   ├── backtester.py              # Backtesting framework that simulates the trading process on historical data
+│   └── simulation_engine.py       # Engine to replay historical data and simulate trades minute‐by‐minute
+│
+├── ui/                            # User interface (desktop application)
+│   └── app.py                     # PyQt5-based UI that displays active tickers, detailed charts (with drill‐down), logs, and parameters
+│
+├── utils/                         # Utility modules and helpers
+│   ├── logger.py                  # Comprehensive logging utility (error log, trade/price log, ML/RL log, etc.)
+│   ├── email_alerts.py            # Module to send email notifications for outages and daily updates
+│   └── helpers.py                 # Miscellaneous helper functions
+│
+├── data/                          # Data storage for logs and simulation outputs
+│   └── logs/                      # Folder where all log files are stored (organized by date and type)
+│
+├── requirements.txt               # List of Python dependencies for installation via pip
+└── README.md                      # Project documentation and instructions

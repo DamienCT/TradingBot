@@ -1,0 +1,91 @@
+Explanation of Key Metrics
+Below are the primary settings you’ll tweak between conservative, moderate, and aggressive profiles.
+
+rsi_period
+
+The lookback period for computing the RSI (Relative Strength Index). Commonly 14.
+
+rsi_overbought / rsi_oversold
+
+RSI thresholds that define overbought/oversold conditions. A conservative strategy might treat the market 
+as “overbought” at a lower RSI (e.g. 65) and “oversold” at a higher RSI (e.g. 40), resulting in fewer trades.
+
+stop_loss_pct
+
+If use_atr_stop is disabled, this is the percentage of your cost basis where you place a stop-loss (e.g. 0.98 means 2% below your cost basis).
+
+use_atr_stop
+
+If true, the stop is based on the stock’s volatility (ATR), rather than a fixed percentage.
+
+atr_stop_multiplier
+
+Determines how many ATRs below your cost basis the stop is placed. For example, if ATR is 1.0 and multiplier is 2.0, you place the stop 2.0 points below cost.
+
+atr_multiplier
+
+A separate ATR factor you can use for additional logic (e.g., partial TPs, averaging down, etc.). Some strategies use the same multiplier for 
+stops and other calculations; others keep them separate.
+
+take_profit_base
+
+The multiple of your cost basis at which you start taking profit. For example, if 1.03, you aim to sell once price is 3% above cost.
+
+take_profit_bump
+
+Extra profit multiplier if the price makes a “fast move.” For instance, if take_profit_base = 1.03 and take_profit_bump = 0.05, 
+then a rapid move might raise your profit target to 1.08 (8% above cost).
+
+fast_move_threshold
+
+The intraday % price jump that qualifies as a “fast move.” If the price moves more than this threshold in one bar (or some short timeframe), it triggers the bump.
+
+macd_confirmation
+
+If true, the bot checks MACD vs. MACD signal for bullish/bearish confirmation before buying or selling. Turned off here for simplicity.
+
+risk_per_trade
+
+The fraction of your total account balance you’re willing to risk on each trade. Conservative is lower (e.g. 0.03 or 3%); aggressive is higher (e.g. 0.15 or 15%).
+
+min_risk_per_share
+
+Ensures a minimum per-share risk used in your position sizing. Helps avoid unrealistically large share counts when ATR is very small.
+
+max_shares_per_trade and max_position_value
+
+Hard caps on how many shares or how many dollars’ worth of shares you can buy at once.
+
+indicator_switches
+
+Which technical indicators to use (RSI, MACD, SMA20, etc.). If false, the logic that references them is bypassed.
+
+partial_tp_levels
+
+Array of partial take-profit triggers. For example, if multiple_of_risk = 2.0, the bot might sell 50% of your position once the price has 
+gained 2× your “risk per share.”
+
+Each object has a sell_fraction so you can scale out in increments.
+
+drawdown_protection
+
+Daily drawdown limit stops trading if you lose more than a certain % in one day.
+
+Total drawdown limit can do the same for total equity drawdown. (Here we only enable daily.)
+
+enable_trailing_stop and trailing_multiplier
+
+If trailing stops are enabled, the stop will move upward with the price once you’re in profit, using some multiple of ATR or a custom logic.
+
+The trailing_multiplier sets how tight or loose that trailing stop is.
+
+partial_take_profit and partial_take_profit_ratio
+
+If partial_take_profit = true, the bot uses partial TPs.
+
+partial_take_profit_ratio can help define how big the partial TPs are relative to your initial risk or cost basis.
+
+position_size
+
+A fixed base position size if you want to override or supplement the risk-based share calculations. 
+Some strategies will just ignore this if they rely on risk_per_trade, but it can also be used as an additional limit or default trade size.

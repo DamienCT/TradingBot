@@ -1,0 +1,9 @@
+
+
+cd "Trading Bot/TradingBotFinal"
+
+cd "TradingBotFinal"
+
+
+python -m core.main
+

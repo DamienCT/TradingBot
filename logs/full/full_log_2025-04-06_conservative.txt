@@ -1,0 +1,1038 @@
+[INFO] Full text logger initialized. Output redirected to: D:\IBKR API\Trading Bot\TradingBotFinal\logs\full\full_log_2025-04-06_conservative.txt
+[INFO] CSV logger initialized for moderate. File: D:\IBKR API\Trading Bot\TradingBotFinal\logs\transactions\transactions_2025-04-06_moderate.csv
+[WARN] Stdout appears to be already redirected. Full log might not capture all output.
+[INFO] CSV logger initialized for aggressive. File: D:\IBKR API\Trading Bot\TradingBotFinal\logs\transactions\transactions_2025-04-06_aggressive.csv
+[WARN] Stdout appears to be already redirected. Full log might not capture all output.
+
+[BACKTEST] ---- Day 20250324 ----
+[DEBUG] Clearing daily historical data dictionaries.
+[INFO] Daily trading state reset.
+[STEP 1] Current Holdings (Simulated EOD): []
+[SCANNER] Need 20 symbols, scanning for top 10 new symbols.
+[SCANNER] Starting scan MOST_ACTIVE, instrument=STK, location=STK.US.MAJOR, filters=[('priceAbove', '25.0'), ('priceBelow', '100.0')]
+[API ERROR INTERPRETED] reqId=-1, code=2106, msg='HMDS data farm connection is OK:ushmds', advanced='' (interpreted from 5 args)
+ERROR -1 2106 HMDS data farm connection is OK:ushmds 
+[INFO] Scanner data end for reqId=501
+[SCANNER] Found 50 unique symbols. Returning top 10.
+[STEP 1] Symbols selected for day trading: ['NVDA', 'TQQQ', 'SQQQ', 'HYG', 'FXI', 'PLTR', 'XLF', 'BAC', 'SOXS', 'TLT']
+[STEP 2] Requesting data for selected symbols...
+[REQUEST] Historical data (1m) for NVDA from 20250324 16:00:00 US/Eastern, barSize=1 min
+[API ERROR INTERPRETED] reqId=501, code=162, msg='Historical Market Data Service error message:API scanner subscription cancelled: 501', advanced='' (interpreted from 5 args)
+ERROR 501 162 Historical Market Data Service error message:API scanner subscription cancelled: 501 
+[REQUEST] 15-min data for NVDA from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for TQQQ from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for TQQQ from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for SQQQ from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for SQQQ from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for HYG from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for HYG from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for FXI from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for FXI from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for PLTR from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for PLTR from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for XLF from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for XLF from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for BAC from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for BAC from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for SOXS from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for SOXS from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for TLT from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for TLT from 20250324 16:00:00 US/Eastern, duration=5 D
+[INFO] Historical data end for reqId=502. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=505. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=503. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=506. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=504. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=507. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=509. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=508. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=511. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[STEP 2] 20 data requests submitted.
+[INFO] Waiting for 20 data requests to complete...
+[DEBUG] Waiting for historical data completion for 20 requests...
+[INFO] Historical data end for reqId=513. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=510. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=512. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=515. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=516. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=514. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=517. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=519. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=518. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=521. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=520. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[DEBUG] All 20 historical data requests completed.
+[INFO] All historical data requests completed or timed out.
+[INFO] Simulating 390 bars for the day across 10 symbols...
+[INFO] Daily trading state reset.
+[conservative/HYG] Initial Buy: 6 @ 79.44, HWM: 79.44, Stop: 79.190, InitRisk: 0.250
+[aggressive/BAC] Initial Buy: 25 @ 42.98, HWM: 42.98, Stop: 42.846, InitRisk: 0.134
+[conservative/BAC] Initial Buy: 10 @ 43.01, HWM: 43.01, Stop: 42.760, InitRisk: 0.250
+[moderate/BAC] Initial Buy: 20 @ 43.01, HWM: 43.01, Stop: 42.760, InitRisk: 0.250
+[aggressive/SQQQ] Initial Buy: 25 @ 34.43, HWM: 34.43, Stop: 34.253, InitRisk: 0.177
+[conservative/FXI] Initial Buy: 10 @ 36.79, HWM: 36.79, Stop: 36.540, InitRisk: 0.250
+[aggressive/BAC] Closed Position: Sold 25 @ 43.05. Reason: TrailingStopHit(43.061). PnL: 1.75
+[moderate/BAC] Closed Position: Sold 20 @ 42.99. Reason: TrailingStopHit(43.039). PnL: -0.40
+[aggressive/BAC] Initial Buy: 25 @ 42.99, HWM: 42.99, Stop: 42.890, InitRisk: 0.100
+[aggressive/SQQQ] Closed Position: Sold 25 @ 34.48. Reason: TrailingStopHit(34.504). PnL: 1.25
+[aggressive/BAC] Closed Position: Sold 25 @ 43.03. Reason: TrailingStopHit(43.033). PnL: 1.00
+[conservative/HYG] Closed Position: Sold 6 @ 79.45. Reason: RSIOverbought(65.23>=65). PnL: 0.06
+[aggressive/SQQQ] Initial Buy: 25 @ 34.26, HWM: 34.26, Stop: 34.143, InitRisk: 0.117
+[conservative/FXI] Closed Position: Sold 10 @ 36.91. Reason: RSIOverbought(68.36>=65). PnL: 1.20
+[aggressive/SQQQ] Closed Position: Sold 25 @ 34.30. Reason: TrailingStopHit(34.314). PnL: 1.00
+[aggressive/BAC] Initial Buy: 25 @ 42.93, HWM: 42.93, Stop: 42.830, InitRisk: 0.100
+[aggressive/SOXS] Initial Buy: 25 @ 22.54, HWM: 22.54, Stop: 22.440, InitRisk: 0.100
+[aggressive/BAC] Closed Position: Sold 25 @ 42.93. Reason: TrailingStopHit(42.950). PnL: 0.00
+[aggressive/BAC] Initial Buy: 25 @ 42.89, HWM: 42.89, Stop: 42.790, InitRisk: 0.100
+[aggressive/SOXS] Closed Position: Sold 25 @ 22.54. Reason: TrailingStopHit(22.570). PnL: 0.00
+[conservative/PLTR] Initial Buy: 5 @ 95.72, HWM: 95.72, Stop: 95.447, InitRisk: 0.273
+[aggressive/SOXS] Initial Buy: 25 @ 22.44, HWM: 22.44, Stop: 22.340, InitRisk: 0.100
+[conservative/HYG] Initial Buy: 6 @ 79.45, HWM: 79.45, Stop: 79.200, InitRisk: 0.250
+[aggressive/SOXS] Closed Position: Sold 25 @ 22.29. Reason: TrailingStopHit(22.419). PnL: -3.75
+[aggressive/SOXS] Initial Buy: 25 @ 22.26, HWM: 22.26, Stop: 22.160, InitRisk: 0.100
+[aggressive/BAC] Closed Position: Sold 25 @ 42.94. Reason: TrailingStopHit(42.951). PnL: 1.25
+[aggressive/HYG] Initial Buy: 18 @ 79.43, HWM: 79.43, Stop: 79.330, InitRisk: 0.100
+[conservative/PLTR] Closed Position: Sold 5 @ 95.42. Reason: StopLossHit(95.447). PnL: -1.50
+[conservative/TQQQ] Initial Buy: 7 @ 65.89, HWM: 65.89, Stop: 65.640, InitRisk: 0.250
+[conservative/PLTR] Initial Buy: 5 @ 95.35, HWM: 95.35, Stop: 95.100, InitRisk: 0.250
+[aggressive/SOXS] Partial Sell: Sold 7 @ 22.44. Remaining: 18. Reason: PartialTP 1 (1.5R @22.410). PnL: 1.26
+[aggressive/SOXS] Marked Partial TP Level 1 as taken after selling 7. Total sold for TP: 7
+[aggressive/HYG] Closed Position: Sold 18 @ 79.42. Reason: TrailingStopHit(79.430). PnL: -0.18
+[aggressive/FXI] Initial Buy: 25 @ 36.75, HWM: 36.75, Stop: 36.650, InitRisk: 0.100
+[aggressive/SOXS] Closed Position: Sold 18 @ 22.37. Reason: TrailingStopHit(22.374). PnL: 1.98
+[moderate/TQQQ] Initial Buy: 15 @ 65.78, HWM: 65.78, Stop: 65.530, InitRisk: 0.250
+[aggressive/FXI] Closed Position: Sold 25 @ 36.74. Reason: TrailingStopHit(36.745). PnL: -0.25
+[aggressive/NVDA] Initial Buy: 12 @ 121.49, HWM: 121.49, Stop: 121.250, InitRisk: 0.240
+[conservative/PLTR] Partial Sell: Sold 2 @ 95.92. Remaining: 3. Reason: PartialTP 1 (2.0R @95.850). PnL: 1.14
+[conservative/PLTR] Marked Partial TP Level 1 as taken after selling 2. Total sold for TP: 2
+[conservative/PLTR] Partial Sell: Sold 1 @ 96.13. Remaining: 2. Reason: PartialTP 2 (3.0R @96.100). PnL: 0.78
+[conservative/PLTR] Marked Partial TP Level 2 as taken after selling 1. Total sold for TP: 3
+[aggressive/NVDA] Partial Sell: Sold 3 @ 121.90. Remaining: 9. Reason: PartialTP 1 (1.5R @121.850). PnL: 1.23
+[aggressive/NVDA] Marked Partial TP Level 1 as taken after selling 3. Total sold for TP: 3
+[aggressive/SOXS] Initial Buy: 25 @ 22.39, HWM: 22.39, Stop: 22.290, InitRisk: 0.100
+[conservative/TQQQ] Closed Position: Sold 7 @ 66.11. Reason: RSIOverbought(66.45>=65). PnL: 1.54
+[moderate/TQQQ] Closed Position: Sold 15 @ 66.11. Reason: RSIOverbought(66.45>=65). PnL: 4.95
+[conservative/HYG] Closed Position: Sold 6 @ 79.48. Reason: RSIOverbought(68.58>=65). PnL: 0.18
+[aggressive/NVDA] Partial Sell: Sold 3 @ 121.99. Remaining: 6. Reason: PartialTP 2 (2.0R @121.971). PnL: 1.50
+[aggressive/NVDA] Marked Partial TP Level 2 as taken after selling 3. Total sold for TP: 6
+[aggressive/NVDA] Closed Position: Sold 6 @ 122.15. Reason: RSIOverbought(70.90>=70). PnL: 3.96
+[aggressive/FXI] Initial Buy: 25 @ 36.69, HWM: 36.69, Stop: 36.590, InitRisk: 0.100
+[conservative/XLF] Initial Buy: 9 @ 50.12, HWM: 50.12, Stop: 49.870, InitRisk: 0.250
+[aggressive/SOXS] Closed Position: Sold 25 @ 22.26. Reason: StopLossHit(22.290). PnL: -3.25
+[aggressive/SOXS] Initial Buy: 25 @ 22.25, HWM: 22.25, Stop: 22.150, InitRisk: 0.100
+[aggressive/FXI] Closed Position: Sold 25 @ 36.70. Reason: TrailingStopHit(36.723). PnL: 0.25
+[aggressive/BAC] Initial Buy: 25 @ 42.83, HWM: 42.83, Stop: 42.730, InitRisk: 0.100
+[conservative/TQQQ] Initial Buy: 7 @ 65.88, HWM: 65.88, Stop: 65.630, InitRisk: 0.250
+[moderate/HYG] Initial Buy: 12 @ 79.46, HWM: 79.46, Stop: 79.210, InitRisk: 0.250
+[aggressive/SOXS] Partial Sell: Sold 7 @ 22.40. Remaining: 18. Reason: PartialTP 1 (1.5R @22.400). PnL: 1.05
+[aggressive/SOXS] Marked Partial TP Level 1 as taken after selling 7. Total sold for TP: 7
+[moderate/TQQQ] Initial Buy: 15 @ 65.84, HWM: 65.84, Stop: 65.590, InitRisk: 0.250
+[aggressive/SOXS] Partial Sell: Sold 7 @ 22.48. Remaining: 11. Reason: PartialTP 2 (2.0R @22.450). PnL: 1.61
+[aggressive/SOXS] Marked Partial TP Level 2 as taken after selling 7. Total sold for TP: 14
+[aggressive/BAC] Closed Position: Sold 25 @ 42.81. Reason: TrailingStopHit(42.812). PnL: -0.50
+[aggressive/XLF] Initial Buy: 25 @ 50.05, HWM: 50.05, Stop: 49.950, InitRisk: 0.100
+[moderate/HYG] Closed Position: Sold 12 @ 79.45. Reason: TrailingStopHit(79.451). PnL: -0.12
+[moderate/XLF] Initial Buy: 19 @ 50.04, HWM: 50.04, Stop: 49.790, InitRisk: 0.250
+[aggressive/SOXS] Partial Sell: Sold 10 @ 22.58. Remaining: 1. Reason: PartialTP 3 (3.0R @22.550). PnL: 3.30
+[aggressive/SOXS] Marked Partial TP Level 3 as taken after selling 10. Total sold for TP: 24
+[moderate/TQQQ] Closed Position: Sold 15 @ 65.70. Reason: TrailingStopHit(65.798). PnL: -2.10
+[moderate/HYG] Initial Buy: 12 @ 79.45, HWM: 79.45, Stop: 79.200, InitRisk: 0.250
+[aggressive/SOXS] Closed Position: Sold 1 @ 22.66. Reason: RSIOverbought(75.98>=70). PnL: 0.41
+[aggressive/XLF] Closed Position: Sold 25 @ 50.04. Reason: TrailingStopHit(50.047). PnL: -0.25
+[moderate/XLF] Closed Position: Sold 19 @ 50.04. Reason: TrailingStopHit(50.041). PnL: 0.00
+[aggressive/FXI] Initial Buy: 25 @ 36.63, HWM: 36.63, Stop: 36.530, InitRisk: 0.100
+[conservative/BAC] Closed Position: Sold 10 @ 42.90. Reason: RSIOverbought(68.14>=65). PnL: -1.10
+[conservative/HYG] Initial Buy: 6 @ 79.45, HWM: 79.45, Stop: 79.200, InitRisk: 0.250
+[moderate/HYG] Closed Position: Sold 12 @ 79.45. Reason: TrailingStopHit(79.452). PnL: 0.00
+[moderate/HYG] Initial Buy: 12 @ 79.45, HWM: 79.45, Stop: 79.200, InitRisk: 0.250
+[conservative/TQQQ] Closed Position: Sold 7 @ 65.63. Reason: StopLossHit(65.630). PnL: -1.75
+[aggressive/FXI] Closed Position: Sold 25 @ 36.70. Reason: RSIOverbought(70.61>=70). PnL: 1.75
+[conservative/HYG] Closed Position: Sold 6 @ 79.47. Reason: RSIOverbought(69.93>=65). PnL: 0.12
+[moderate/HYG] Closed Position: Sold 12 @ 79.47. Reason: RSIOverbought(69.93>=65). PnL: 0.24
+[conservative/XLF] Closed Position: Sold 9 @ 50.03. Reason: RSIOverbought(67.68>=65). PnL: -0.81
+[aggressive/TLT] Initial Buy: 16 @ 89.95, HWM: 89.95, Stop: 89.850, InitRisk: 0.100
+[conservative/HYG] Initial Buy: 6 @ 79.45, HWM: 79.45, Stop: 79.200, InitRisk: 0.250
+[aggressive/TLT] Closed Position: Sold 16 @ 89.85. Reason: StopLossHit(89.850). PnL: -1.60
+[aggressive/TLT] Initial Buy: 16 @ 89.84, HWM: 89.84, Stop: 89.740, InitRisk: 0.100
+[conservative/PLTR] Closed Position: Sold 2 @ 95.96. Reason: RSIOverbought(65.34>=65). PnL: 1.22
+[aggressive/TLT] Closed Position: Sold 16 @ 89.81. Reason: TrailingStopHit(89.831). PnL: -0.48
+[aggressive/HYG] Initial Buy: 18 @ 79.42, HWM: 79.42, Stop: 79.320, InitRisk: 0.100
+[aggressive/HYG] Closed Position: Sold 18 @ 79.42. Reason: TrailingStopHit(79.423). PnL: 0.00
+[aggressive/TLT] Initial Buy: 16 @ 89.77, HWM: 89.77, Stop: 89.670, InitRisk: 0.100
+[conservative/PLTR] Initial Buy: 5 @ 95.35, HWM: 95.35, Stop: 95.100, InitRisk: 0.250
+[conservative/PLTR] Partial Sell: Sold 2 @ 95.87. Remaining: 3. Reason: PartialTP 1 (2.0R @95.850). PnL: 1.04
+[conservative/PLTR] Marked Partial TP Level 1 as taken after selling 2. Total sold for TP: 2
+[aggressive/TLT] Closed Position: Sold 16 @ 89.78. Reason: TrailingStopHit(89.803). PnL: 0.16
+[conservative/PLTR] Closed Position: Sold 3 @ 96.05. Reason: RSIOverbought(65.13>=65). PnL: 2.10
+[aggressive/SOXS] Initial Buy: 25 @ 22.64, HWM: 22.64, Stop: 22.540, InitRisk: 0.100
+[aggressive/SQQQ] Initial Buy: 25 @ 34.21, HWM: 34.21, Stop: 34.110, InitRisk: 0.100
+[aggressive/SQQQ] Closed Position: Sold 25 @ 34.16. Reason: TrailingStopHit(34.197). PnL: -1.25
+[conservative/HYG] Closed Position: Sold 6 @ 79.46. Reason: RSIOverbought(73.00>=65). PnL: 0.06
+[aggressive/TLT] Initial Buy: 16 @ 89.72, HWM: 89.72, Stop: 89.620, InitRisk: 0.100
+[aggressive/SOXS] Closed Position: Sold 25 @ 22.54. Reason: StopLossHit(22.540). PnL: -2.50
+[aggressive/TLT] Closed Position: Sold 16 @ 89.81. Reason: TrailingStopHit(89.825). PnL: 1.44
+[aggressive/SQQQ] Initial Buy: 25 @ 34.09, HWM: 34.09, Stop: 33.990, InitRisk: 0.100
+[aggressive/SOXS] Initial Buy: 25 @ 22.46, HWM: 22.46, Stop: 22.360, InitRisk: 0.100
+[aggressive/SOXS] Closed Position: Sold 25 @ 22.42. Reason: TrailingStopHit(22.431). PnL: -1.00
+[aggressive/SQQQ] Closed Position: Sold 25 @ 34.04. Reason: TrailingStopHit(34.052). PnL: -1.25
+[aggressive/SOXS] Initial Buy: 25 @ 22.39, HWM: 22.39, Stop: 22.290, InitRisk: 0.100
+[aggressive/SOXS] Partial Sell: Sold 7 @ 22.54. Remaining: 18. Reason: PartialTP 1 (1.5R @22.540). PnL: 1.05[INFO] Full text logger initialized. Output redirected to: D:\IBKR API\Trading Bot\TradingBotFinal\logs\full\full_log_2025-04-06_conservative.txt
+[INFO] CSV logger initialized for moderate. File: D:\IBKR API\Trading Bot\TradingBotFinal\logs\transactions\transactions_2025-04-06_moderate.csv
+[WARN] Stdout appears to be already redirected. Full log might not capture all output.
+[INFO] CSV logger initialized for aggressive. File: D:\IBKR API\Trading Bot\TradingBotFinal\logs\transactions\transactions_2025-04-06_aggressive.csv
+[WARN] Stdout appears to be already redirected. Full log might not capture all output.
+
+[BACKTEST] ---- Day 20250324 ----
+[DEBUG] Clearing daily historical data dictionaries.
+[INFO] Daily trading state reset.
+[STEP 1] Current Holdings (Simulated EOD): []
+[SCANNER] Need 20 symbols, scanning for top 10 new symbols.
+[SCANNER] Starting scan MOST_ACTIVE, instrument=STK, location=STK.US.MAJOR, filters=[('priceAbove', '25.0'), ('priceBelow', '100.0')]
+[INFO] Scanner data end for reqId=501
+[SCANNER] Found 50 unique symbols. Returning top 10.
+[STEP 1] Symbols selected for day trading: ['NVDA', 'TQQQ', 'SQQQ', 'HYG', 'FXI', 'PLTR', 'XLF', 'BAC', 'SOXS', 'TLT']
+[STEP 2] Requesting data for selected symbols...
+[REQUEST] Historical data (1m) for NVDA from 20250324 16:00:00 US/Eastern, barSize=1 min
+[API ERROR INTERPRETED] reqId=501, code=162, msg='Historical Market Data Service error message:API scanner subscription cancelled: 501', advanced='' (interpreted from 5 args)
+ERROR 501 162 Historical Market Data Service error message:API scanner subscription cancelled: 501 
+[REQUEST] 15-min data for NVDA from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for TQQQ from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for TQQQ from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for SQQQ from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for SQQQ from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for HYG from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for HYG from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for FXI from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for FXI from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for PLTR from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for PLTR from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for XLF from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for XLF from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for BAC from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for BAC from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for SOXS from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for SOXS from 20250324 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for TLT from 20250324 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for TLT from 20250324 16:00:00 US/Eastern, duration=5 D
+[STEP 2] 20 data requests submitted.
+[INFO] Waiting for 20 data requests to complete...
+[DEBUG] Waiting for historical data completion for 20 requests...
+[INFO] Historical data end for reqId=502. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=503. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=505. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=506. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=504. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=507. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=509. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=508. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=513. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=518. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=512. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=514. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=511. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=521. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=516. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=510. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=517. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=515. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=520. Start: 20250323 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=519. Start: 20250319 16:00:00 US/Eastern, End: 20250324 16:00:00 US/Eastern
+[DEBUG] All 20 historical data requests completed.
+[INFO] All historical data requests completed or timed out.
+[INFO] Simulating 390 bars for the day across 10 symbols...
+[INFO] Daily trading state reset.
+[conservative/HYG] Initial Buy: 6 @ 79.44, HWM: 79.44, Stop: 79.190, InitRisk: 0.250
+[aggressive/BAC] Initial Buy: 25 @ 42.98, HWM: 42.98, Stop: 42.846, InitRisk: 0.134
+[conservative/BAC] Initial Buy: 10 @ 43.01, HWM: 43.01, Stop: 42.760, InitRisk: 0.250
+[moderate/BAC] Initial Buy: 20 @ 43.01, HWM: 43.01, Stop: 42.760, InitRisk: 0.250
+[aggressive/SQQQ] Initial Buy: 25 @ 34.43, HWM: 34.43, Stop: 34.253, InitRisk: 0.177
+[conservative/FXI] Initial Buy: 10 @ 36.79, HWM: 36.79, Stop: 36.540, InitRisk: 0.250
+[aggressive/BAC] Closed Position: Sold 25 @ 43.05. Reason: TrailingStopHit(43.061). PnL: 1.75
+[moderate/BAC] Closed Position: Sold 20 @ 42.99. Reason: TrailingStopHit(43.039). PnL: -0.40
+[aggressive/BAC] Initial Buy: 25 @ 42.99, HWM: 42.99, Stop: 42.890, InitRisk: 0.100
+[aggressive/SQQQ] Closed Position: Sold 25 @ 34.48. Reason: TrailingStopHit(34.504). PnL: 1.25
+[aggressive/BAC] Closed Position: Sold 25 @ 43.03. Reason: TrailingStopHit(43.033). PnL: 1.00
+[conservative/HYG] Closed Position: Sold 6 @ 79.45. Reason: RSIOverbought(65.23>=65). PnL: 0.06
+[aggressive/SQQQ] Initial Buy: 25 @ 34.26, HWM: 34.26, Stop: 34.143, InitRisk: 0.117
+[conservative/FXI] Closed Position: Sold 10 @ 36.91. Reason: RSIOverbought(68.36>=65). PnL: 1.20
+[aggressive/SQQQ] Closed Position: Sold 25 @ 34.30. Reason: TrailingStopHit(34.314). PnL: 1.00
+[aggressive/BAC] Initial Buy: 25 @ 42.93, HWM: 42.93, Stop: 42.830, InitRisk: 0.100
+[aggressive/SOXS] Initial Buy: 25 @ 22.54, HWM: 22.54, Stop: 22.440, InitRisk: 0.100
+[aggressive/BAC] Closed Position: Sold 25 @ 42.93. Reason: TrailingStopHit(42.950). PnL: 0.00
+[aggressive/BAC] Initial Buy: 25 @ 42.89, HWM: 42.89, Stop: 42.790, InitRisk: 0.100
+[aggressive/SOXS] Closed Position: Sold 25 @ 22.54. Reason: TrailingStopHit(22.570). PnL: 0.00
+[conservative/PLTR] Initial Buy: 5 @ 95.72, HWM: 95.72, Stop: 95.447, InitRisk: 0.273
+[aggressive/SOXS] Initial Buy: 25 @ 22.44, HWM: 22.44, Stop: 22.340, InitRisk: 0.100
+[conservative/HYG] Initial Buy: 6 @ 79.45, HWM: 79.45, Stop: 79.200, InitRisk: 0.250
+[aggressive/SOXS] Closed Position: Sold 25 @ 22.29. Reason: TrailingStopHit(22.419). PnL: -3.75
+[aggressive/SOXS] Initial Buy: 25 @ 22.26, HWM: 22.26, Stop: 22.160, InitRisk: 0.100
+[aggressive/BAC] Closed Position: Sold 25 @ 42.94. Reason: TrailingStopHit(42.951). PnL: 1.25
+[aggressive/HYG] Initial Buy: 18 @ 79.43, HWM: 79.43, Stop: 79.330, InitRisk: 0.100
+[conservative/PLTR] Closed Position: Sold 5 @ 95.42. Reason: StopLossHit(95.447). PnL: -1.50
+[conservative/TQQQ] Initial Buy: 7 @ 65.89, HWM: 65.89, Stop: 65.640, InitRisk: 0.250
+[conservative/PLTR] Initial Buy: 5 @ 95.35, HWM: 95.35, Stop: 95.100, InitRisk: 0.250
+[aggressive/SOXS] Partial Sell: Sold 7 @ 22.44. Remaining: 18. Reason: PartialTP 1 (1.5R @22.410). PnL: 1.26
+[aggressive/SOXS] Marked Partial TP Level 1 as taken after selling 7. Total sold for TP: 7
+[aggressive/HYG] Closed Position: Sold 18 @ 79.42. Reason: TrailingStopHit(79.430). PnL: -0.18
+[aggressive/FXI] Initial Buy: 25 @ 36.75, HWM: 36.75, Stop: 36.650, InitRisk: 0.100
+[aggressive/SOXS] Closed Position: Sold 18 @ 22.37. Reason: TrailingStopHit(22.374). PnL: 1.98
+[moderate/TQQQ] Initial Buy: 15 @ 65.78, HWM: 65.78, Stop: 65.530, InitRisk: 0.250
+[aggressive/FXI] Closed Position: Sold 25 @ 36.74. Reason: TrailingStopHit(36.745). PnL: -0.25
+[aggressive/NVDA] Initial Buy: 12 @ 121.49, HWM: 121.49, Stop: 121.250, InitRisk: 0.240
+[conservative/PLTR] Partial Sell: Sold 2 @ 95.92. Remaining: 3. Reason: PartialTP 1 (2.0R @95.850). PnL: 1.14
+[conservative/PLTR] Marked Partial TP Level 1 as taken after selling 2. Total sold for TP: 2
+[conservative/PLTR] Partial Sell: Sold 1 @ 96.13. Remaining: 2. Reason: PartialTP 2 (3.0R @96.100). PnL: 0.78
+[conservative/PLTR] Marked Partial TP Level 2 as taken after selling 1. Total sold for TP: 3
+[aggressive/NVDA] Partial Sell: Sold 3 @ 121.90. Remaining: 9. Reason: PartialTP 1 (1.5R @121.850). PnL: 1.23
+[aggressive/NVDA] Marked Partial TP Level 1 as taken after selling 3. Total sold for TP: 3
+[aggressive/SOXS] Initial Buy: 25 @ 22.39, HWM: 22.39, Stop: 22.290, InitRisk: 0.100
+[conservative/TQQQ] Closed Position: Sold 7 @ 66.11. Reason: RSIOverbought(66.45>=65). PnL: 1.54
+[moderate/TQQQ] Closed Position: Sold 15 @ 66.11. Reason: RSIOverbought(66.45>=65). PnL: 4.95
+[conservative/HYG] Closed Position: Sold 6 @ 79.48. Reason: RSIOverbought(68.58>=65). PnL: 0.18
+[aggressive/NVDA] Partial Sell: Sold 3 @ 121.99. Remaining: 6. Reason: PartialTP 2 (2.0R @121.971). PnL: 1.50
+[aggressive/NVDA] Marked Partial TP Level 2 as taken after selling 3. Total sold for TP: 6
+[aggressive/NVDA] Closed Position: Sold 6 @ 122.15. Reason: RSIOverbought(70.90>=70). PnL: 3.96
+[aggressive/FXI] Initial Buy: 25 @ 36.69, HWM: 36.69, Stop: 36.590, InitRisk: 0.100
+[conservative/XLF] Initial Buy: 9 @ 50.12, HWM: 50.12, Stop: 49.870, InitRisk: 0.250
+[aggressive/SOXS] Closed Position: Sold 25 @ 22.26. Reason: StopLossHit(22.290). PnL: -3.25
+[aggressive/SOXS] Initial Buy: 25 @ 22.25, HWM: 22.25, Stop: 22.150, InitRisk: 0.100
+[aggressive/FXI] Closed Position: Sold 25 @ 36.70. Reason: TrailingStopHit(36.723). PnL: 0.25
+[aggressive/BAC] Initial Buy: 25 @ 42.83, HWM: 42.83, Stop: 42.730, InitRisk: 0.100
+[conservative/TQQQ] Initial Buy: 7 @ 65.88, HWM: 65.88, Stop: 65.630, InitRisk: 0.250
+[moderate/HYG] Initial Buy: 12 @ 79.46, HWM: 79.46, Stop: 79.210, InitRisk: 0.250
+[aggressive/SOXS] Partial Sell: Sold 7 @ 22.40. Remaining: 18. Reason: PartialTP 1 (1.5R @22.400). PnL: 1.05
+[aggressive/SOXS] Marked Partial TP Level 1 as taken after selling 7. Total sold for TP: 7
+[moderate/TQQQ] Initial Buy: 15 @ 65.84, HWM: 65.84, Stop: 65.590, InitRisk: 0.250
+[aggressive/SOXS] Partial Sell: Sold 7 @ 22.48. Remaining: 11. Reason: PartialTP 2 (2.0R @22.450). PnL: 1.61
+[aggressive/SOXS] Marked Partial TP Level 2 as taken after selling 7. Total sold for TP: 14
+[aggressive/BAC] Closed Position: Sold 25 @ 42.81. Reason: TrailingStopHit(42.812). PnL: -0.50
+[aggressive/XLF] Initial Buy: 25 @ 50.05, HWM: 50.05, Stop: 49.950, InitRisk: 0.100
+[moderate/HYG] Closed Position: Sold 12 @ 79.45. Reason: TrailingStopHit(79.451). PnL: -0.12
+[moderate/XLF] Initial Buy: 19 @ 50.04, HWM: 50.04, Stop: 49.790, InitRisk: 0.250
+[aggressive/SOXS] Partial Sell: Sold 10 @ 22.58. Remaining: 1. Reason: PartialTP 3 (3.0R @22.550). PnL: 3.30
+[aggressive/SOXS] Marked Partial TP Level 3 as taken after selling 10. Total sold for TP: 24
+[moderate/TQQQ] Closed Position: Sold 15 @ 65.70. Reason: TrailingStopHit(65.798). PnL: -2.10
+[moderate/HYG] Initial Buy: 12 @ 79.45, HWM: 79.45, Stop: 79.200, InitRisk: 0.250
+[aggressive/SOXS] Closed Position: Sold 1 @ 22.66. Reason: RSIOverbought(75.98>=70). PnL: 0.41
+[aggressive/XLF] Closed Position: Sold 25 @ 50.04. Reason: TrailingStopHit(50.047). PnL: -0.25
+[moderate/XLF] Closed Position: Sold 19 @ 50.04. Reason: TrailingStopHit(50.041). PnL: 0.00
+[aggressive/FXI] Initial Buy: 25 @ 36.63, HWM: 36.63, Stop: 36.530, InitRisk: 0.100
+[conservative/BAC] Closed Position: Sold 10 @ 42.90. Reason: RSIOverbought(68.14>=65). PnL: -1.10
+[conservative/HYG] Initial Buy: 6 @ 79.45, HWM: 79.45, Stop: 79.200, InitRisk: 0.250
+[moderate/HYG] Closed Position: Sold 12 @ 79.45. Reason: TrailingStopHit(79.452). PnL: 0.00
+[moderate/HYG] Initial Buy: 12 @ 79.45, HWM: 79.45, Stop: 79.200, InitRisk: 0.250
+[conservative/TQQQ] Closed Position: Sold 7 @ 65.63. Reason: StopLossHit(65.630). PnL: -1.75
+[aggressive/FXI] Closed Position: Sold 25 @ 36.70. Reason: RSIOverbought(70.61>=70). PnL: 1.75
+[conservative/HYG] Closed Position: Sold 6 @ 79.47. Reason: RSIOverbought(69.93>=65). PnL: 0.12
+[moderate/HYG] Closed Position: Sold 12 @ 79.47. Reason: RSIOverbought(69.93>=65). PnL: 0.24
+[conservative/XLF] Closed Position: Sold 9 @ 50.03. Reason: RSIOverbought(67.68>=65). PnL: -0.81
+[aggressive/TLT] Initial Buy: 16 @ 89.95, HWM: 89.95, Stop: 89.850, InitRisk: 0.100
+[conservative/HYG] Initial Buy: 6 @ 79.45, HWM: 79.45, Stop: 79.200, InitRisk: 0.250
+[aggressive/TLT] Closed Position: Sold 16 @ 89.85. Reason: StopLossHit(89.850). PnL: -1.60
+[aggressive/TLT] Initial Buy: 16 @ 89.84, HWM: 89.84, Stop: 89.740, InitRisk: 0.100
+[conservative/PLTR] Closed Position: Sold 2 @ 95.96. Reason: RSIOverbought(65.34>=65). PnL: 1.22
+[aggressive/TLT] Closed Position: Sold 16 @ 89.81. Reason: TrailingStopHit(89.831). PnL: -0.48
+[aggressive/HYG] Initial Buy: 18 @ 79.42, HWM: 79.42, Stop: 79.320, InitRisk: 0.100
+[aggressive/HYG] Closed Position: Sold 18 @ 79.42. Reason: TrailingStopHit(79.423). PnL: 0.00
+[aggressive/TLT] Initial Buy: 16 @ 89.77, HWM: 89.77, Stop: 89.670, InitRisk: 0.100
+[conservative/PLTR] Initial Buy: 5 @ 95.35, HWM: 95.35, Stop: 95.100, InitRisk: 0.250
+[conservative/PLTR] Partial Sell: Sold 2 @ 95.87. Remaining: 3. Reason: PartialTP 1 (2.0R @95.850). PnL: 1.04
+[conservative/PLTR] Marked Partial TP Level 1 as taken after selling 2. Total sold for TP: 2
+[aggressive/TLT] Closed Position: Sold 16 @ 89.78. Reason: TrailingStopHit(89.803). PnL: 0.16
+[conservative/PLTR] Closed Position: Sold 3 @ 96.05. Reason: RSIOverbought(65.13>=65). PnL: 2.10
+[aggressive/SOXS] Initial Buy: 25 @ 22.64, HWM: 22.64, Stop: 22.540, InitRisk: 0.100
+[aggressive/SQQQ] Initial Buy: 25 @ 34.21, HWM: 34.21, Stop: 34.110, InitRisk: 0.100
+[aggressive/SQQQ] Closed Position: Sold 25 @ 34.16. Reason: TrailingStopHit(34.197). PnL: -1.25
+[conservative/HYG] Closed Position: Sold 6 @ 79.46. Reason: RSIOverbought(73.00>=65). PnL: 0.06
+[aggressive/TLT] Initial Buy: 16 @ 89.72, HWM: 89.72, Stop: 89.620, InitRisk: 0.100
+[aggressive/SOXS] Closed Position: Sold 25 @ 22.54. Reason: StopLossHit(22.540). PnL: -2.50
+[aggressive/TLT] Closed Position: Sold 16 @ 89.81. Reason: TrailingStopHit(89.825). PnL: 1.44
+[aggressive/SQQQ] Initial Buy: 25 @ 34.09, HWM: 34.09, Stop: 33.990, InitRisk: 0.100
+[aggressive/SOXS] Initial Buy: 25 @ 22.46, HWM: 22.46, Stop: 22.360, InitRisk: 0.100
+[aggressive/SOXS] Closed Position: Sold 25 @ 22.42. Reason: TrailingStopHit(22.431). PnL: -1.00
+[aggressive/SQQQ] Closed Position: Sold 25 @ 34.04. Reason: TrailingStopHit(34.052). PnL: -1.25
+[aggressive/SOXS] Initial Buy: 25 @ 22.39, HWM: 22.39, Stop: 22.290, InitRisk: 0.100
+[aggressive/SOXS] Partial Sell: Sold 7 @ 22.54. Remaining: 18. Reason: PartialTP 1 (1.5R @22.540). PnL: 1.05
+[aggressive/SOXS] Marked Partial TP Level 1 as taken after selling 7. Total sold for TP: 7
+[aggressive/TLT] Initial Buy: 16 @ 89.76, HWM: 89.76, Stop: 89.660, InitRisk: 0.100
+[aggressive/SOXS] Partial Sell: Sold 7 @ 22.59. Remaining: 11. Reason: PartialTP 2 (2.0R @22.590). PnL: 1.40
+[aggressive/SOXS] Marked Partial TP Level 2 as taken after selling 7. Total sold for TP: 14
+[aggressive/SOXS] Closed Position: Sold 11 @ 22.54. Reason: TrailingStopHit(22.548). PnL: 1.65
+[aggressive/TLT] Closed Position: Sold 16 @ 89.74. Reason: TrailingStopHit(89.744). PnL: -0.32
+[aggressive/SQQQ] Initial Buy: 25 @ 34.01, HWM: 34.01, Stop: 33.910, InitRisk: 0.100
+[aggressive/SQQQ] Closed Position: Sold 25 @ 33.94. Reason: TrailingStopHit(34.046). PnL: -1.75
+[aggressive/NVDA] Initial Buy: 12 @ 121.55, HWM: 121.55, Stop: 121.337, InitRisk: 0.213
+[conservative/XLF] Initial Buy: 9 @ 50.13, HWM: 50.13, Stop: 49.880, InitRisk: 0.250
+[conservative/BAC] Initial Buy: 10 @ 43.03, HWM: 43.03, Stop: 42.780, InitRisk: 0.250
+
+[INFO] Market exit time (15:55:00) reached at bar 389. Closing open positions.
+[conservative/XLF] EOD Exit: Selling 9 shares.
+[conservative/XLF] Closed Position: Sold 9 @ 50.13. Reason: EndOfDayExit. PnL: 0.00
+[conservative/BAC] EOD Exit: Selling 10 shares.
+[conservative/BAC] Closed Position: Sold 10 @ 43.03. Reason: EndOfDayExit. PnL: 0.00
+[aggressive/NVDA] EOD Exit: Selling 12 shares.
+[aggressive/NVDA] Closed Position: Sold 12 @ 121.23. Reason: EndOfDayExit. PnL: -3.84
+
+[INFO] Simulation loop completed for the day.
+
+[BACKTEST] ---- Day 20250325 ----
+[DEBUG] Clearing daily historical data dictionaries.
+[INFO] Daily trading state reset.
+[STEP 1] Current Holdings (Simulated EOD): []
+[SCANNER] Need 20 symbols, scanning for top 10 new symbols.
+[SCANNER] Starting scan MOST_ACTIVE, instrument=STK, location=STK.US.MAJOR, filters=[('priceAbove', '25.0'), ('priceBelow', '100.0')]
+[INFO] Scanner data end for reqId=522
+[SCANNER] Found 50 unique symbols. Returning top 10.
+[STEP 1] Symbols selected for day trading: ['NVDA', 'TQQQ', 'SQQQ', 'HYG', 'FXI', 'PLTR', 'XLF', 'BAC', 'SOXS', 'TLT']
+[STEP 2] Requesting data for selected symbols...[API ERROR INTERPRETED] reqId=522, code=162, msg='Historical Market Data Service error message:API scanner subscription cancelled: 522', advanced='' (interpreted from 5 args)
+[REQUEST] Historical data (1m) for NVDA from 20250325 16:00:00 US/Eastern, barSize=1 min
+ERROR 522 162 Historical Market Data Service error message:API scanner subscription cancelled: 522 
+
+[REQUEST] 15-min data for NVDA from 20250325 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for TQQQ from 20250325 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for TQQQ from 20250325 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for SQQQ from 20250325 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for SQQQ from 20250325 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for HYG from 20250325 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for HYG from 20250325 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for FXI from 20250325 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for FXI from 20250325 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for PLTR from 20250325 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for PLTR from 20250325 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for XLF from 20250325 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for XLF from 20250325 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for BAC from 20250325 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for BAC from 20250325 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for SOXS from 20250325 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for SOXS from 20250325 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for TLT from 20250325 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for TLT from 20250325 16:00:00 US/Eastern, duration=5 D
+[INFO] Historical data end for reqId=523. Start: 20250324 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[STEP 2] 20 data requests submitted.
+[INFO] Waiting for 20 data requests to complete...
+[DEBUG] Waiting for historical data completion for 20 requests...
+[INFO] Historical data end for reqId=524. Start: 20250320 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=526. Start: 20250320 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=525. Start: 20250324 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=531. Start: 20250324 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=530. Start: 20250320 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=538. Start: 20250320 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=536. Start: 20250320 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=537. Start: 20250324 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=527. Start: 20250324 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=535. Start: 20250324 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=539. Start: 20250324 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=533. Start: 20250324 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=542. Start: 20250320 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=532. Start: 20250320 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=528. Start: 20250320 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=541. Start: 20250324 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=540. Start: 20250320 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=534. Start: 20250320 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=529. Start: 20250324 16:00:00 US/Eastern, End: 20250325 16:00:00 US/Eastern
+[DEBUG] All 20 historical data requests completed.
+[INFO] All historical data requests completed or timed out.
+[INFO] Simulating 390 bars for the day across 10 symbols...
+[INFO] Daily trading state reset.
+[aggressive/XLF] Initial Buy: 25 @ 50.29, HWM: 50.29, Stop: 50.190, InitRisk: 0.100
+[aggressive/XLF] Closed Position: Sold 25 @ 50.19. Reason: StopLossHit(50.190). PnL: -2.50
+[aggressive/BAC] Initial Buy: 25 @ 43.22, HWM: 43.22, Stop: 43.094, InitRisk: 0.126
+[aggressive/BAC] Closed Position: Sold 25 @ 43.13. Reason: TrailingStopHit(43.195). PnL: -2.25
+[aggressive/BAC] Initial Buy: 25 @ 43.14, HWM: 43.14, Stop: 43.038, InitRisk: 0.102
+[aggressive/BAC] Closed Position: Sold 25 @ 43.21. Reason: TrailingStopHit(43.227). PnL: 1.75
+[aggressive/FXI] Initial Buy: 25 @ 36.50, HWM: 36.50, Stop: 36.400, InitRisk: 0.100
+[aggressive/SQQQ] Initial Buy: 25 @ 33.68, HWM: 33.68, Stop: 33.570, InitRisk: 0.110
+[aggressive/FXI] Closed Position: Sold 25 @ 36.48. Reason: TrailingStopHit(36.482). PnL: -0.50
+[aggressive/SQQQ] Closed Position: Sold 25 @ 33.73. Reason: TrailingStopHit(33.748). PnL: 1.25
+[aggressive/FXI] Initial Buy: 25 @ 36.47, HWM: 36.47, Stop: 36.370, InitRisk: 0.100
+[aggressive/SQQQ] Initial Buy: 25 @ 33.61, HWM: 33.61, Stop: 33.510, InitRisk: 0.100
+[aggressive/FXI] Closed Position: Sold 25 @ 36.46. Reason: TrailingStopHit(36.467). PnL: -0.25
+[aggressive/FXI] Initial Buy: 25 @ 36.45, HWM: 36.45, Stop: 36.350, InitRisk: 0.100
+[conservative/XLF] Initial Buy: 9 @ 50.37, HWM: 50.37, Stop: 50.120, InitRisk: 0.250
+[aggressive/SQQQ] Closed Position: Sold 25 @ 33.55. Reason: TrailingStopHit(33.556). PnL: -1.50
+[aggressive/FXI] Closed Position: Sold 25 @ 36.54. Reason: TrailingStopHit(36.543). PnL: 2.25
+[aggressive/HYG] Initial Buy: 18 @ 79.50, HWM: 79.50, Stop: 79.400, InitRisk: 0.100
+[conservative/TQQQ] Initial Buy: 7 @ 67.09, HWM: 67.09, Stop: 66.840, InitRisk: 0.250
+[moderate/TQQQ] Initial Buy: 14 @ 67.03, HWM: 67.03, Stop: 66.780, InitRisk: 0.250
+[moderate/XLF] Initial Buy: 19 @ 50.36, HWM: 50.36, Stop: 50.110, InitRisk: 0.250
+[aggressive/HYG] Closed Position: Sold 18 @ 79.49. Reason: TrailingStopHit(79.496). PnL: -0.18
+[aggressive/FXI] Initial Buy: 25 @ 36.44, HWM: 36.44, Stop: 36.340, InitRisk: 0.100
+[moderate/TQQQ] Closed Position: Sold 14 @ 66.95. Reason: TrailingStopHit(66.958). PnL: -1.12
+[moderate/XLF] Closed Position: Sold 19 @ 50.34. Reason: TrailingStopHit(50.348). PnL: -0.38
+[aggressive/BAC] Initial Buy: 25 @ 43.20, HWM: 43.20, Stop: 43.100, InitRisk: 0.100
+[aggressive/FXI] Closed Position: Sold 25 @ 36.41. Reason: TrailingStopHit(36.426). PnL: -0.75
+[aggressive/BAC] Closed Position: Sold 25 @ 43.19. Reason: TrailingStopHit(43.190). PnL: -0.25
+[moderate/TQQQ] Initial Buy: 14 @ 66.86, HWM: 66.86, Stop: 66.610, InitRisk: 0.250
+[aggressive/TQQQ] Initial Buy: 22 @ 66.86, HWM: 66.86, Stop: 66.743, InitRisk: 0.117
+[conservative/TQQQ] Closed Position: Sold 7 @ 66.84. Reason: StopLossHit(66.840). PnL: -1.75
+[conservative/TQQQ] Initial Buy: 7 @ 66.82, HWM: 66.82, Stop: 66.570, InitRisk: 0.250
+[moderate/TQQQ] Closed Position: Sold 14 @ 66.83. Reason: TrailingStopHit(66.835). PnL: -0.42
+[aggressive/TQQQ] Closed Position: Sold 22 @ 66.83. Reason: TrailingStopHit(66.862). PnL: -0.66
+[aggressive/HYG] Initial Buy: 18 @ 79.47, HWM: 79.47, Stop: 79.370, InitRisk: 0.100
+[aggressive/HYG] Closed Position: Sold 18 @ 79.48. Reason: TrailingStopHit(79.487). PnL: 0.18
+[aggressive/TQQQ] Initial Buy: 22 @ 66.70, HWM: 66.70, Stop: 66.580, InitRisk: 0.120
+[conservative/NVDA] Initial Buy: 4 @ 120.54, HWM: 120.54, Stop: 120.290, InitRisk: 0.250
+[conservative/NVDA] Closed Position: Sold 4 @ 120.98. Reason: RSIOverbought(66.68>=65). PnL: 1.76
+[aggressive/TQQQ] Partial Sell: Sold 6 @ 66.91. Remaining: 16. Reason: PartialTP 1 (1.5R @66.881). PnL: 1.26
+[aggressive/TQQQ] Marked Partial TP Level 1 as taken after selling 6. Total sold for TP: 6
+[aggressive/TQQQ] Partial Sell: Sold 6 @ 66.95. Remaining: 10. Reason: PartialTP 2 (2.0R @66.941). PnL: 1.50
+[aggressive/TQQQ] Marked Partial TP Level 2 as taken after selling 6. Total sold for TP: 12
+[conservative/TQQQ] Closed Position: Sold 7 @ 67.03. Reason: RSIOverbought(67.40>=65). PnL: 1.47
+[aggressive/SQQQ] Initial Buy: 25 @ 33.66, HWM: 33.66, Stop: 33.560, InitRisk: 0.100
+[aggressive/TQQQ] Closed Position: Sold 10 @ 66.91. Reason: TrailingStopHit(66.943). PnL: 2.10
+[aggressive/SQQQ] Closed Position: Sold 25 @ 33.67. Reason: TrailingStopHit(33.672). PnL: 0.25
+[aggressive/SQQQ] Initial Buy: 25 @ 33.62, HWM: 33.62, Stop: 33.520, InitRisk: 0.100
+[conservative/XLF] Closed Position: Sold 9 @ 50.36. Reason: RSIOverbought(67.61>=65). PnL: -0.09
+[conservative/TQQQ] Initial Buy: 7 @ 66.91, HWM: 66.91, Stop: 66.660, InitRisk: 0.250
+[conservative/NVDA] Initial Buy: 4 @ 120.79, HWM: 120.79, Stop: 120.540, InitRisk: 0.250
+[moderate/TQQQ] Initial Buy: 14 @ 66.85, HWM: 66.85, Stop: 66.600, InitRisk: 0.250
+[aggressive/SQQQ] Partial Sell: Sold 7 @ 33.78. Remaining: 18. Reason: PartialTP 1 (1.5R @33.770). PnL: 1.12
+[aggressive/SQQQ] Marked Partial TP Level 1 as taken after selling 7. Total sold for TP: 7
+[moderate/NVDA] Initial Buy: 8 @ 120.67, HWM: 120.67, Stop: 120.420, InitRisk: 0.250
+[aggressive/BAC] Initial Buy: 25 @ 43.20, HWM: 43.20, Stop: 43.100, InitRisk: 0.100
+[aggressive/SQQQ] Partial Sell: Sold 7 @ 33.84. Remaining: 11. Reason: PartialTP 2 (2.0R @33.820). PnL: 1.54
+[aggressive/SQQQ] Marked Partial TP Level 2 as taken after selling 7. Total sold for TP: 14
+[aggressive/SQQQ] Closed Position: Sold 11 @ 33.87. Reason: RSIOverbought(76.23>=70). PnL: 2.75
+[aggressive/FXI] Initial Buy: 25 @ 36.42, HWM: 36.42, Stop: 36.320, InitRisk: 0.100
+[conservative/NVDA] Closed Position: Sold 4 @ 120.46. Reason: StopLossHit(120.540). PnL: -1.32
+[conservative/NVDA] Initial Buy: 4 @ 120.51, HWM: 120.51, Stop: 120.260, InitRisk: 0.250
+[conservative/TQQQ] Closed Position: Sold 7 @ 66.65. Reason: StopLossHit(66.660). PnL: -1.82
+[moderate/NVDA] Closed Position: Sold 8 @ 120.55. Reason: TrailingStopHit(120.564). PnL: -0.96
+[aggressive/FXI] Closed Position: Sold 25 @ 36.42. Reason: TrailingStopHit(36.423). PnL: 0.00
+[aggressive/BAC] Closed Position: Sold 25 @ 43.23. Reason: TrailingStopHit(43.246). PnL: 0.75
+[moderate/TQQQ] Closed Position: Sold 14 @ 66.56. Reason: StopLossHit(66.600). PnL: -4.06
+[aggressive/XLF] Initial Buy: 25 @ 50.28, HWM: 50.28, Stop: 50.180, InitRisk: 0.100
+[aggressive/XLF] Closed Position: Sold 25 @ 50.27. Reason: TrailingStopHit(50.275). PnL: -0.25
+[aggressive/BAC] Initial Buy: 25 @ 43.18, HWM: 43.18, Stop: 43.080, InitRisk: 0.100
+[aggressive/SQQQ] Initial Buy: 25 @ 33.76, HWM: 33.76, Stop: 33.660, InitRisk: 0.100
+[conservative/NVDA] Closed Position: Sold 4 @ 120.94. Reason: RSIOverbought(67.79>=65). PnL: 1.72
+[aggressive/SQQQ] Closed Position: Sold 25 @ 33.73. Reason: TrailingStopHit(33.738). PnL: -0.75
+[aggressive/FXI] Initial Buy: 25 @ 36.39, HWM: 36.39, Stop: 36.290, InitRisk: 0.100
+[conservative/SOXS] Initial Buy: 10 @ 22.97, HWM: 22.97, Stop: 22.720, InitRisk: 0.250
+[aggressive/FXI] Closed Position: Sold 25 @ 36.39. Reason: TrailingStopHit(36.395). PnL: 0.00
+[aggressive/FXI] Initial Buy: 25 @ 36.36, HWM: 36.36, Stop: 36.260, InitRisk: 0.100
+[aggressive/BAC] Closed Position: Sold 25 @ 43.22. Reason: TrailingStopHit(43.232). PnL: 1.00
+[aggressive/FXI] Closed Position: Sold 25 @ 36.35. Reason: TrailingStopHit(36.353). PnL: -0.25
+[aggressive/TLT] Initial Buy: 16 @ 89.91, HWM: 89.91, Stop: 89.810, InitRisk: 0.100
+[aggressive/TLT] Closed Position: Sold 16 @ 89.90. Reason: TrailingStopHit(89.903). PnL: -0.16
+[aggressive/FXI] Initial Buy: 25 @ 36.34, HWM: 36.34, Stop: 36.240, InitRisk: 0.100
+[aggressive/BAC] Initial Buy: 25 @ 43.16, HWM: 43.16, Stop: 43.060, InitRisk: 0.100
+[conservative/NVDA] Initial Buy: 4 @ 120.60, HWM: 120.60, Stop: 120.350, InitRisk: 0.250
+[aggressive/BAC] Closed Position: Sold 25 @ 43.17. Reason: TrailingStopHit(43.175). PnL: 0.25
+[moderate/SOXS] Initial Buy: 20 @ 22.94, HWM: 22.94, Stop: 22.690, InitRisk: 0.250
+[aggressive/SOXS] Initial Buy: 25 @ 22.94, HWM: 22.94, Stop: 22.840, InitRisk: 0.100
+[moderate/SOXS] Closed Position: Sold 20 @ 22.98. Reason: TrailingStopHit(22.984). PnL: 0.80
+[aggressive/SOXS] Closed Position: Sold 25 @ 22.98. Reason: TrailingStopHit(22.995). PnL: 1.00
+[moderate/SOXS] Initial Buy: 20 @ 22.87, HWM: 22.87, Stop: 22.620, InitRisk: 0.250
+[aggressive/SOXS] Initial Buy: 25 @ 22.87, HWM: 22.87, Stop: 22.770, InitRisk: 0.100
+[conservative/NVDA] Partial Sell: Sold 2 @ 121.21. Remaining: 2. Reason: PartialTP 1 (2.0R @121.100). PnL: 1.22
+[conservative/NVDA] Marked Partial TP Level 1 as taken after selling 2. Total sold for TP: 2
+[moderate/SOXS] Closed Position: Sold 20 @ 22.84. Reason: TrailingStopHit(22.842). PnL: -0.60
+[aggressive/SOXS] Closed Position: Sold 25 @ 22.84. Reason: TrailingStopHit(22.854). PnL: -0.75
+[aggressive/SQQQ] Initial Buy: 25 @ 33.61, HWM: 33.61, Stop: 33.510, InitRisk: 0.100
+[moderate/SOXS] Initial Buy: 20 @ 22.81, HWM: 22.81, Stop: 22.560, InitRisk: 0.250
+
+[INFO] Market exit time (15:55:00) reached at bar 389. Closing open positions.
+[conservative/SOXS] EOD Exit: Selling 10 shares.
+[conservative/SOXS] Closed Position: Sold 10 @ 22.92. Reason: EndOfDayExit. PnL: -0.50
+[conservative/NVDA] EOD Exit: Selling 2 shares.
+[conservative/NVDA] Closed Position: Sold 2 @ 120.65. Reason: EndOfDayExit. PnL: 0.10
+[moderate/SOXS] EOD Exit: Selling 20 shares.
+[moderate/SOXS] Closed Position: Sold 20 @ 22.92. Reason: EndOfDayExit. PnL: 2.20
+[aggressive/FXI] EOD Exit: Selling 25 shares.
+[aggressive/FXI] Closed Position: Sold 25 @ 36.31. Reason: EndOfDayExit. PnL: -0.75
+[aggressive/SQQQ] EOD Exit: Selling 25 shares.
+[aggressive/SQQQ] Closed Position: Sold 25 @ 33.52. Reason: EndOfDayExit. PnL: -2.25
+
+[INFO] Simulation loop completed for the day.
+
+[BACKTEST] ---- Day 20250326 ----
+[DEBUG] Clearing daily historical data dictionaries.
+[INFO] Daily trading state reset.
+[STEP 1] Current Holdings (Simulated EOD): []
+[SCANNER] Need 20 symbols, scanning for top 10 new symbols.
+[SCANNER] Starting scan MOST_ACTIVE, instrument=STK, location=STK.US.MAJOR, filters=[('priceAbove', '25.0'), ('priceBelow', '100.0')]
+[INFO] Scanner data end for reqId=543
+[SCANNER] Found 50 unique symbols. Returning top 10.
+[STEP 1] Symbols selected for day trading: ['NVDA', 'TQQQ', 'SQQQ', 'HYG', 'FXI', 'PLTR', 'XLF', 'BAC', 'SOXS', 'TLT']
+[STEP 2] Requesting data for selected symbols...
+[REQUEST] Historical data (1m) for NVDA from 20250326 16:00:00 US/Eastern, barSize=1 min
+[API ERROR INTERPRETED] reqId=543, code=162, msg='Historical Market Data Service error message:API scanner subscription cancelled: 543', advanced='' (interpreted from 5 args)
+ERROR 543 162 Historical Market Data Service error message:API scanner subscription cancelled: 543 
+[REQUEST] 15-min data for NVDA from 20250326 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for TQQQ from 20250326 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for TQQQ from 20250326 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for SQQQ from 20250326 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for SQQQ from 20250326 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for HYG from 20250326 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for HYG from 20250326 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for FXI from 20250326 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for FXI from 20250326 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for PLTR from 20250326 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for PLTR from 20250326 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for XLF from 20250326 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for XLF from 20250326 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for BAC from 20250326 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for BAC from 20250326 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for SOXS from 20250326 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for SOXS from 20250326 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for TLT from 20250326 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for TLT from 20250326 16:00:00 US/Eastern, duration=5 D
+[STEP 2] 20 data requests submitted.
+[INFO] Waiting for 20 data requests to complete...
+[DEBUG] Waiting for historical data completion for 20 requests...
+[INFO] Historical data end for reqId=544. Start: 20250325 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=545. Start: 20250321 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=547. Start: 20250321 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=548. Start: 20250325 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=546. Start: 20250325 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=549. Start: 20250321 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=550. Start: 20250325 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=555. Start: 20250321 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=562. Start: 20250325 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=563. Start: 20250321 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=551. Start: 20250321 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=561. Start: 20250321 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=559. Start: 20250321 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=558. Start: 20250325 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=552. Start: 20250325 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=554. Start: 20250325 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=556. Start: 20250325 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=560. Start: 20250325 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=557. Start: 20250321 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=553. Start: 20250321 16:00:00 US/Eastern, End: 20250326 16:00:00 US/Eastern
+[DEBUG] All 20 historical data requests completed.
+[INFO] All historical data requests completed or timed out.
+[INFO] Simulating 390 bars for the day across 10 symbols...
+[INFO] Daily trading state reset.
+[aggressive/NVDA] Initial Buy: 12 @ 117.59, HWM: 117.59, Stop: 116.832, InitRisk: 0.758
+[aggressive/NVDA] Closed Position: Sold 12 @ 116.43. Reason: StopLossHit(116.832). PnL: -13.92
+[aggressive/TQQQ] Initial Buy: 22 @ 65.55, HWM: 65.55, Stop: 65.238, InitRisk: 0.312
+[aggressive/TQQQ] Closed Position: Sold 22 @ 65.32. Reason: TrailingStopHit(65.409). PnL: -5.06
+[aggressive/NVDA] Initial Buy: 13 @ 115.23, HWM: 115.23, Stop: 114.738, InitRisk: 0.492
+[aggressive/NVDA] Closed Position: Sold 13 @ 115.10. Reason: TrailingStopHit(115.127). PnL: -1.69
+[aggressive/HYG] Initial Buy: 18 @ 79.30, HWM: 79.30, Stop: 79.200, InitRisk: 0.100
+[conservative/SQQQ] Initial Buy: 10 @ 33.94, HWM: 33.94, Stop: 33.690, InitRisk: 0.250
+[conservative/SQQQ] Closed Position: Sold 10 @ 34.05. Reason: RSIOverbought(65.48>=65). PnL: 1.10
+[aggressive/HYG] Closed Position: Sold 18 @ 79.20. Reason: StopLossHit(79.200). PnL: -1.80
+[aggressive/PLTR] Initial Buy: 16 @ 93.72, HWM: 93.72, Stop: 93.427, InitRisk: 0.293
+[aggressive/PLTR] Closed Position: Sold 16 @ 92.20. Reason: StopLossHit(93.427). PnL: -24.32
+[aggressive/FXI] Initial Buy: 25 @ 36.35, HWM: 36.35, Stop: 36.250, InitRisk: 0.100
+[aggressive/FXI] Closed Position: Sold 25 @ 36.33. Reason: TrailingStopHit(36.331). PnL: -0.50
+[aggressive/NVDA] Initial Buy: 13 @ 113.78, HWM: 113.78, Stop: 113.497, InitRisk: 0.283
+[conservative/SQQQ] Initial Buy: 10 @ 34.34, HWM: 34.34, Stop: 34.090, InitRisk: 0.250
+[aggressive/NVDA] Partial Sell: Sold 3 @ 114.21. Remaining: 10. Reason: PartialTP 1 (1.5R @114.205). PnL: 1.29
+[aggressive/NVDA] Marked Partial TP Level 1 as taken after selling 3. Total sold for TP: 3
+[aggressive/NVDA] Closed Position: Sold 10 @ 114.03. Reason: TrailingStopHit(114.056). PnL: 2.50
+[aggressive/HYG] Initial Buy: 18 @ 79.11, HWM: 79.11, Stop: 79.010, InitRisk: 0.100
+[conservative/SQQQ] Closed Position: Sold 10 @ 34.65. Reason: RSIOverbought(66.23>=65). PnL: 3.10
+[aggressive/HYG] Closed Position: Sold 18 @ 79.00. Reason: StopLossHit(79.010). PnL: -1.98
+[aggressive/HYG] Initial Buy: 18 @ 78.98, HWM: 78.98, Stop: 78.880, InitRisk: 0.100
+[aggressive/HYG] Closed Position: Sold 18 @ 78.98. Reason: TrailingStopHit(78.980). PnL: 0.00
+[aggressive/FXI] Initial Buy: 25 @ 36.18, HWM: 36.18, Stop: 36.080, InitRisk: 0.100
+[aggressive/FXI] Closed Position: Sold 25 @ 36.21. Reason: TrailingStopHit(36.216). PnL: 0.75
+[aggressive/PLTR] Initial Buy: 16 @ 91.57, HWM: 91.57, Stop: 91.348, InitRisk: 0.222
+[aggressive/PLTR] Closed Position: Sold 16 @ 91.24. Reason: StopLossHit(91.348). PnL: -5.28
+[aggressive/PLTR] Initial Buy: 16 @ 91.12, HWM: 91.12, Stop: 90.869, InitRisk: 0.251
+[aggressive/PLTR] Partial Sell: Sold 4 @ 91.58. Remaining: 12. Reason: PartialTP 1 (1.5R @91.496). PnL: 1.84
+[aggressive/PLTR] Marked Partial TP Level 1 as taken after selling 4. Total sold for TP: 4
+[conservative/SQQQ] Initial Buy: 10 @ 34.82, HWM: 34.82, Stop: 34.570, InitRisk: 0.250
+[aggressive/PLTR] Partial Sell: Sold 4 @ 91.72. Remaining: 8. Reason: PartialTP 2 (2.0R @91.622). PnL: 2.40
+[aggressive/PLTR] Marked Partial TP Level 2 as taken after selling 4. Total sold for TP: 8
+[aggressive/SOXS] Initial Buy: 25 @ 25.16, HWM: 25.16, Stop: 25.060, InitRisk: 0.100
+[aggressive/PLTR] Partial Sell: Sold 6 @ 91.89. Remaining: 2. Reason: PartialTP 3 (3.0R @91.873). PnL: 4.62
+[aggressive/PLTR] Marked Partial TP Level 3 as taken after selling 6. Total sold for TP: 14
+[aggressive/PLTR] Closed Position: Sold 2 @ 91.76. Reason: TrailingStopHit(91.787). PnL: 1.28
+[aggressive/SOXS] Closed Position: Sold 25 @ 25.09. Reason: TrailingStopHit(25.111). PnL: -1.75
+[aggressive/SOXS] Initial Buy: 25 @ 25.07, HWM: 25.07, Stop: 24.970, InitRisk: 0.100
+[aggressive/SOXS] Closed Position: Sold 25 @ 25.02. Reason: TrailingStopHit(25.029). PnL: -1.25
+[aggressive/HYG] Initial Buy: 18 @ 79.07, HWM: 79.07, Stop: 78.970, InitRisk: 0.100
+[conservative/SQQQ] Closed Position: Sold 10 @ 34.98. Reason: RSIOverbought(67.00>=65). PnL: 1.60
+[aggressive/HYG] Closed Position: Sold 18 @ 79.06. Reason: TrailingStopHit(79.063). PnL: -0.18
+[aggressive/PLTR] Initial Buy: 16 @ 90.92, HWM: 90.92, Stop: 90.658, InitRisk: 0.262
+[aggressive/PLTR] Closed Position: Sold 16 @ 90.97. Reason: TrailingStopHit(90.994). PnL: 0.80
+[aggressive/BAC] Initial Buy: 25 @ 42.74, HWM: 42.74, Stop: 42.640, InitRisk: 0.100
+[aggressive/BAC] Closed Position: Sold 25 @ 42.77. Reason: TrailingStopHit(42.786). PnL: 0.75
+[aggressive/TQQQ] Initial Buy: 23 @ 62.77, HWM: 62.77, Stop: 62.599, InitRisk: 0.171
+[aggressive/TQQQ] Partial Sell: Sold 6 @ 63.09. Remaining: 17. Reason: PartialTP 1 (1.5R @63.026). PnL: 1.92
+[aggressive/TQQQ] Marked Partial TP Level 1 as taken after selling 6. Total sold for TP: 6
+[aggressive/TQQQ] Partial Sell: Sold 6 @ 63.18. Remaining: 11. Reason: PartialTP 2 (2.0R @63.111). PnL: 2.46
+[aggressive/TQQQ] Marked Partial TP Level 2 as taken after selling 6. Total sold for TP: 12
+[conservative/SQQQ] Initial Buy: 10 @ 34.97, HWM: 34.97, Stop: 34.720, InitRisk: 0.250
+[aggressive/TQQQ] Closed Position: Sold 11 @ 63.07. Reason: TrailingStopHit(63.116). PnL: 3.30
+[aggressive/TLT] Initial Buy: 16 @ 89.30, HWM: 89.30, Stop: 89.200, InitRisk: 0.100
+[aggressive/TLT] Closed Position: Sold 16 @ 89.28. Reason: TrailingStopHit(89.280). PnL: -0.32
+[aggressive/SOXS] Initial Buy: 25 @ 24.87, HWM: 24.87, Stop: 24.770, InitRisk: 0.100
+[moderate/SQQQ] Initial Buy: 20 @ 34.77, HWM: 34.77, Stop: 34.520, InitRisk: 0.250
+[aggressive/SQQQ] Initial Buy: 25 @ 34.77, HWM: 34.77, Stop: 34.668, InitRisk: 0.102
+
+[INFO] Market exit time (15:55:00) reached at bar 389. Closing open positions.
+[conservative/SQQQ] EOD Exit: Selling 10 shares.
+[conservative/SQQQ] Closed Position: Sold 10 @ 34.86. Reason: EndOfDayExit. PnL: -1.10
+[moderate/SQQQ] EOD Exit: Selling 20 shares.
+[moderate/SQQQ] Closed Position: Sold 20 @ 34.86. Reason: EndOfDayExit. PnL: 1.80
+[aggressive/SOXS] EOD Exit: Selling 25 shares.
+[aggressive/SOXS] Closed Position: Sold 25 @ 24.91. Reason: EndOfDayExit. PnL: 1.00
+[aggressive/SQQQ] EOD Exit: Selling 25 shares.
+[aggressive/SQQQ] Closed Position: Sold 25 @ 34.86. Reason: EndOfDayExit. PnL: 2.25
+
+[INFO] Simulation loop completed for the day.
+
+[BACKTEST] ---- Day 20250327 ----
+[DEBUG] Clearing daily historical data dictionaries.
+[INFO] Daily trading state reset.
+[STEP 1] Current Holdings (Simulated EOD): []
+[SCANNER] Need 20 symbols, scanning for top 10 new symbols.
+[SCANNER] Starting scan MOST_ACTIVE, instrument=STK, location=STK.US.MAJOR, filters=[('priceAbove', '25.0'), ('priceBelow', '100.0')]
+[INFO] Scanner data end for reqId=564
+[SCANNER] Found 50 unique symbols. Returning top 10.
+[STEP 1] Symbols selected for day trading: ['NVDA', 'TQQQ', 'SQQQ', 'HYG', 'FXI', 'PLTR', 'XLF', 'BAC', 'SOXS', 'TLT']
+[STEP 2] Requesting data for selected symbols...
+[REQUEST] Historical data (1m) for NVDA from 20250327 16:00:00 US/Eastern, barSize=1 min
+[API ERROR INTERPRETED] reqId=564, code=162, msg='Historical Market Data Service error message:API scanner subscription cancelled: 564', advanced='' (interpreted from 5 args)
+ERROR 564 162 Historical Market Data Service error message:API scanner subscription cancelled: 564 
+[REQUEST] 15-min data for NVDA from 20250327 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for TQQQ from 20250327 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for TQQQ from 20250327 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for SQQQ from 20250327 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for SQQQ from 20250327 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for HYG from 20250327 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for HYG from 20250327 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for FXI from 20250327 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for FXI from 20250327 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for PLTR from 20250327 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for PLTR from 20250327 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for XLF from 20250327 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for XLF from 20250327 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for BAC from 20250327 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for BAC from 20250327 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for SOXS from 20250327 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for SOXS from 20250327 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for TLT from 20250327 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for TLT from 20250327 16:00:00 US/Eastern, duration=5 D
+[STEP 2] 20 data requests submitted.
+[INFO] Waiting for 20 data requests to complete...
+[DEBUG] Waiting for historical data completion for 20 requests...
+[INFO] Historical data end for reqId=565. Start: 20250326 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=566. Start: 20250322 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=568. Start: 20250322 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=569. Start: 20250326 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=567. Start: 20250326 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=570. Start: 20250322 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=572. Start: 20250322 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=571. Start: 20250326 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=574. Start: 20250322 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=575. Start: 20250326 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=573. Start: 20250326 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=582. Start: 20250322 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=578. Start: 20250322 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=583. Start: 20250326 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=580. Start: 20250322 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=584. Start: 20250322 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=576. Start: 20250322 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=577. Start: 20250326 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=579. Start: 20250326 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=581. Start: 20250326 16:00:00 US/Eastern, End: 20250327 16:00:00 US/Eastern
+[DEBUG] All 20 historical data requests completed.
+[INFO] All historical data requests completed or timed out.
+[INFO] Simulating 390 bars for the day across 10 symbols...
+[INFO] Daily trading state reset.
+[aggressive/XLF] Initial Buy: 25 @ 49.86, HWM: 49.86, Stop: 49.720, InitRisk: 0.140
+[conservative/TLT] Initial Buy: 5 @ 88.94, HWM: 88.94, Stop: 88.690, InitRisk: 0.250
+[moderate/TLT] Initial Buy: 11 @ 88.94, HWM: 88.94, Stop: 88.690, InitRisk: 0.250
+[aggressive/XLF] Partial Sell: Sold 7 @ 50.09. Remaining: 18. Reason: PartialTP 1 (1.5R @50.070). PnL: 1.61
+[aggressive/XLF] Marked Partial TP Level 1 as taken after selling 7. Total sold for TP: 7
+[aggressive/SQQQ] Initial Buy: 25 @ 35.10, HWM: 35.10, Stop: 34.857, InitRisk: 0.243
+[aggressive/XLF] Partial Sell: Sold 7 @ 50.18. Remaining: 11. Reason: PartialTP 2 (2.0R @50.140). PnL: 2.24
+[aggressive/XLF] Marked Partial TP Level 2 as taken after selling 7. Total sold for TP: 14
+[moderate/TLT] Closed Position: Sold 11 @ 88.79. Reason: TrailingStopHit(88.876). PnL: -1.65
+[aggressive/XLF] Closed Position: Sold 11 @ 50.12. Reason: TrailingStopHit(50.150). PnL: 2.86
+[aggressive/SQQQ] Closed Position: Sold 25 @ 35.02. Reason: TrailingStopHit(35.117). PnL: -2.00
+[aggressive/SQQQ] Initial Buy: 25 @ 34.82, HWM: 34.82, Stop: 34.649, InitRisk: 0.171
+[aggressive/SOXS] Initial Buy: 25 @ 25.86, HWM: 25.86, Stop: 25.691, InitRisk: 0.169
+[aggressive/SQQQ] Closed Position: Sold 25 @ 34.73. Reason: TrailingStopHit(34.745). PnL: -2.25
+[aggressive/SQQQ] Initial Buy: 25 @ 34.67, HWM: 34.67, Stop: 34.514, InitRisk: 0.156
+[aggressive/SOXS] Closed Position: Sold 25 @ 25.55. Reason: StopLossHit(25.691). PnL: -7.75
+[aggressive/SOXS] Initial Buy: 25 @ 25.57, HWM: 25.57, Stop: 25.395, InitRisk: 0.175
+[aggressive/SQQQ] Closed Position: Sold 25 @ 34.61. Reason: TrailingStopHit(34.647). PnL: -1.50
+[aggressive/SQQQ] Initial Buy: 25 @ 34.51, HWM: 34.51, Stop: 34.379, InitRisk: 0.131
+[aggressive/SOXS] Closed Position: Sold 25 @ 25.56. Reason: TrailingStopHit(25.598). PnL: -0.25
+[aggressive/SOXS] Initial Buy: 25 @ 25.51, HWM: 25.51, Stop: 25.373, InitRisk: 0.137
+[conservative/TLT] Closed Position: Sold 5 @ 88.68. Reason: StopLossHit(88.690). PnL: -1.30
+[aggressive/SOXS] Partial Sell: Sold 7 @ 25.76. Remaining: 18. Reason: PartialTP 1 (1.5R @25.715). PnL: 1.75
+[aggressive/SOXS] Marked Partial TP Level 1 as taken after selling 7. Total sold for TP: 7
+[aggressive/SOXS] Partial Sell: Sold 7 @ 25.82. Remaining: 11. Reason: PartialTP 2 (2.0R @25.783). PnL: 2.17
+[aggressive/SOXS] Marked Partial TP Level 2 as taken after selling 7. Total sold for TP: 14
+[aggressive/SQQQ] Closed Position: Sold 25 @ 34.55. Reason: TrailingStopHit(34.570). PnL: 1.00
+[aggressive/SOXS] Partial Sell: Sold 10 @ 25.95. Remaining: 1. Reason: PartialTP 3 (3.0R @25.920). PnL: 4.40
+[aggressive/SOXS] Marked Partial TP Level 3 as taken after selling 10. Total sold for TP: 24
+[aggressive/HYG] Initial Buy: 18 @ 79.08, HWM: 79.08, Stop: 78.980, InitRisk: 0.100
+[aggressive/SOXS] Closed Position: Sold 1 @ 26.13. Reason: RSIOverbought(73.42>=70). PnL: 0.62
+[conservative/SOXS] Initial Buy: 10 @ 26.24, HWM: 26.24, Stop: 25.990, InitRisk: 0.250
+[moderate/SOXS] Initial Buy: 20 @ 26.19, HWM: 26.19, Stop: 25.940, InitRisk: 0.250
+[moderate/SOXS] Closed Position: Sold 20 @ 26.28. Reason: TrailingStopHit(26.294). PnL: 1.80
+[aggressive/HYG] Closed Position: Sold 18 @ 78.98. Reason: StopLossHit(78.980). PnL: -1.80
+[aggressive/XLF] Initial Buy: 25 @ 50.25, HWM: 50.25, Stop: 50.150, InitRisk: 0.100
+[conservative/SOXS] Closed Position: Sold 10 @ 26.53. Reason: RSIOverbought(65.38>=65). PnL: 2.90
+[aggressive/XLF] Closed Position: Sold 25 @ 50.13. Reason: StopLossHit(50.150). PnL: -3.00
+[aggressive/BAC] Initial Buy: 25 @ 42.65, HWM: 42.65, Stop: 42.550, InitRisk: 0.100
+[conservative/SQQQ] Initial Buy: 10 @ 35.12, HWM: 35.12, Stop: 34.870, InitRisk: 0.250
+[conservative/SOXS] Initial Buy: 10 @ 26.48, HWM: 26.48, Stop: 26.230, InitRisk: 0.250
+[aggressive/BAC] Closed Position: Sold 25 @ 42.69. Reason: TrailingStopHit(42.692). PnL: 1.00
+[aggressive/FXI] Initial Buy: 25 @ 36.71, HWM: 36.71, Stop: 36.610, InitRisk: 0.100
+[conservative/SQQQ] Closed Position: Sold 10 @ 35.39. Reason: RSIOverbought(65.44>=65). PnL: 2.70
+[conservative/SOXS] Closed Position: Sold 10 @ 26.71. Reason: RSIOverbought(66.96>=65). PnL: 2.30
+[aggressive/FXI] Closed Position: Sold 25 @ 36.69. Reason: TrailingStopHit(36.698). PnL: -0.50
+[aggressive/NVDA] Initial Buy: 13 @ 111.56, HWM: 111.56, Stop: 111.322, InitRisk: 0.238
+[aggressive/NVDA] Partial Sell: Sold 3 @ 112.01. Remaining: 10. Reason: PartialTP 1 (1.5R @111.917). PnL: 1.35
+[aggressive/NVDA] Marked Partial TP Level 1 as taken after selling 3. Total sold for TP: 3
+[aggressive/NVDA] Partial Sell: Sold 3 @ 112.18. Remaining: 7. Reason: PartialTP 2 (2.0R @112.036). PnL: 1.86
+[aggressive/NVDA] Marked Partial TP Level 2 as taken after selling 3. Total sold for TP: 6
+[aggressive/NVDA] Partial Sell: Sold 5 @ 112.33. Remaining: 2. Reason: PartialTP 3 (3.0R @112.274). PnL: 3.85
+[aggressive/NVDA] Marked Partial TP Level 3 as taken after selling 5. Total sold for TP: 11
+[conservative/SQQQ] Initial Buy: 10 @ 35.14, HWM: 35.14, Stop: 34.890, InitRisk: 0.250
+[conservative/SOXS] Initial Buy: 10 @ 26.46, HWM: 26.46, Stop: 26.210, InitRisk: 0.250
+[aggressive/NVDA] Closed Position: Sold 2 @ 112.07. Reason: TrailingStopHit(112.133). PnL: 1.02
+[aggressive/FXI] Initial Buy: 25 @ 36.65, HWM: 36.65, Stop: 36.550, InitRisk: 0.100
+[moderate/SOXS] Initial Buy: 20 @ 26.42, HWM: 26.42, Stop: 26.170, InitRisk: 0.250
+[aggressive/SOXS] Initial Buy: 25 @ 26.42, HWM: 26.42, Stop: 26.319, InitRisk: 0.101
+[moderate/SQQQ] Initial Buy: 20 @ 35.10, HWM: 35.10, Stop: 34.850, InitRisk: 0.250
+[aggressive/SOXS] Closed Position: Sold 25 @ 26.31. Reason: StopLossHit(26.319). PnL: -2.75
+[aggressive/FXI] Closed Position: Sold 25 @ 36.73. Reason: RSIOverbought(70.04>=70). PnL: 2.00
+[moderate/SQQQ] Closed Position: Sold 20 @ 35.04. Reason: TrailingStopHit(35.051). PnL: -1.20
+[aggressive/SQQQ] Initial Buy: 25 @ 35.04, HWM: 35.04, Stop: 34.921, InitRisk: 0.119
+[aggressive/SOXS] Initial Buy: 25 @ 26.27, HWM: 26.27, Stop: 26.168, InitRisk: 0.102
+[aggressive/SQQQ] Closed Position: Sold 25 @ 35.04. Reason: TrailingStopHit(35.056). PnL: 0.00
+[aggressive/SOXS] Closed Position: Sold 25 @ 26.29. Reason: TrailingStopHit(26.315). PnL: 0.50
+[aggressive/SOXS] Initial Buy: 25 @ 26.22, HWM: 26.22, Stop: 26.120, InitRisk: 0.100
+[conservative/TLT] Initial Buy: 5 @ 88.84, HWM: 88.84, Stop: 88.590, InitRisk: 0.250
+[conservative/SOXS] Closed Position: Sold 10 @ 26.18. Reason: StopLossHit(26.210). PnL: -2.80
+[moderate/SOXS] Closed Position: Sold 20 @ 26.15. Reason: StopLossHit(26.170). PnL: -5.40
+[aggressive/SOXS] Closed Position: Sold 25 @ 26.08. Reason: StopLossHit(26.120). PnL: -3.50
+[aggressive/PLTR] Initial Buy: 16 @ 91.88, HWM: 91.88, Stop: 91.595, InitRisk: 0.285
+[aggressive/PLTR] Closed Position: Sold 16 @ 91.49. Reason: StopLossHit(91.595). PnL: -6.24
+[aggressive/PLTR] Initial Buy: 16 @ 91.26, HWM: 91.26, Stop: 90.940, InitRisk: 0.320
+[aggressive/PLTR] Closed Position: Sold 16 @ 91.44. Reason: TrailingStopHit(91.464). PnL: 2.88
+[aggressive/SOXS] Initial Buy: 25 @ 25.94, HWM: 25.94, Stop: 25.840, InitRisk: 0.100
+[aggressive/SQQQ] Initial Buy: 25 @ 34.91, HWM: 34.91, Stop: 34.806, InitRisk: 0.104
+[aggressive/SOXS] Closed Position: Sold 25 @ 25.81. Reason: StopLossHit(25.840). PnL: -3.25
+[conservative/SQQQ] Closed Position: Sold 10 @ 34.88. Reason: StopLossHit(34.890). PnL: -2.60
+[conservative/TLT] Closed Position: Sold 5 @ 88.85. Reason: RSIOverbought(66.50>=65). PnL: 0.05
+[aggressive/SQQQ] Partial Sell: Sold 7 @ 35.07. Remaining: 18. Reason: PartialTP 1 (1.5R @35.066). PnL: 1.12
+[aggressive/SQQQ] Marked Partial TP Level 1 as taken after selling 7. Total sold for TP: 7
+[aggressive/SQQQ] Partial Sell: Sold 7 @ 35.13. Remaining: 11. Reason: PartialTP 2 (2.0R @35.118). PnL: 1.54
+[aggressive/SQQQ] Marked Partial TP Level 2 as taken after selling 7. Total sold for TP: 14
+[aggressive/NVDA] Initial Buy: 13 @ 112.11, HWM: 112.11, Stop: 111.897, InitRisk: 0.213
+[aggressive/SQQQ] Partial Sell: Sold 10 @ 35.29. Remaining: 1. Reason: PartialTP 3 (3.0R @35.222). PnL: 3.80
+[aggressive/SQQQ] Marked Partial TP Level 3 as taken after selling 10. Total sold for TP: 24
+[aggressive/SQQQ] Closed Position: Sold 1 @ 35.37. Reason: RSIOverbought(73.13>=70). PnL: 0.46
+[aggressive/NVDA] Closed Position: Sold 13 @ 111.58. Reason: TrailingStopHit(111.931). PnL: -6.89
+[aggressive/TQQQ] Initial Buy: 24 @ 62.46, HWM: 62.46, Stop: 62.206, InitRisk: 0.254
+
+[INFO] Market exit time (15:55:00) reached at bar 389. Closing open positions.
+[aggressive/TQQQ] EOD Exit: Selling 24 shares.
+[aggressive/TQQQ] Closed Position: Sold 24 @ 62.28. Reason: EndOfDayExit. PnL: -4.32
+
+[INFO] Simulation loop completed for the day.
+
+[BACKTEST] ---- Day 20250328 ----
+[DEBUG] Clearing daily historical data dictionaries.
+[INFO] Daily trading state reset.
+[STEP 1] Current Holdings (Simulated EOD): []
+[SCANNER] Need 20 symbols, scanning for top 10 new symbols.
+[SCANNER] Starting scan MOST_ACTIVE, instrument=STK, location=STK.US.MAJOR, filters=[('priceAbove', '25.0'), ('priceBelow', '100.0')]
+[INFO] Scanner data end for reqId=585
+[SCANNER] Found 50 unique symbols. Returning top 10.
+[STEP 1] Symbols selected for day trading: ['NVDA', 'TQQQ', 'SQQQ', 'HYG', 'FXI', 'PLTR', 'XLF', 'BAC', 'SOXS', 'TLT']
+[STEP 2] Requesting data for selected symbols...
+[REQUEST] Historical data (1m) for NVDA from 20250328 16:00:00 US/Eastern, barSize=1 min
+[API ERROR INTERPRETED] reqId=585, code=162, msg='Historical Market Data Service error message:API scanner subscription cancelled: 585', advanced='' (interpreted from 5 args)
+ERROR 585 162 Historical Market Data Service error message:API scanner subscription cancelled: 585 
+[REQUEST] 15-min data for NVDA from 20250328 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for TQQQ from 20250328 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for TQQQ from 20250328 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for SQQQ from 20250328 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for SQQQ from 20250328 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for HYG from 20250328 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for HYG from 20250328 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for FXI from 20250328 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for FXI from 20250328 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for PLTR from 20250328 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for PLTR from 20250328 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for XLF from 20250328 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for XLF from 20250328 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for BAC from 20250328 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for BAC from 20250328 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for SOXS from 20250328 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for SOXS from 20250328 16:00:00 US/Eastern, duration=5 D
+[REQUEST] Historical data (1m) for TLT from 20250328 16:00:00 US/Eastern, barSize=1 min
+[REQUEST] 15-min data for TLT from 20250328 16:00:00 US/Eastern, duration=5 D
+[STEP 2] 20 data requests submitted.
+[INFO] Waiting for 20 data requests to complete...
+[DEBUG] Waiting for historical data completion for 20 requests...
+[INFO] Historical data end for reqId=586. Start: 20250327 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=587. Start: 20250323 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=589. Start: 20250323 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=588. Start: 20250327 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=590. Start: 20250327 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=591. Start: 20250323 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=593. Start: 20250323 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=592. Start: 20250327 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=595. Start: 20250323 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=594. Start: 20250327 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=596. Start: 20250327 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=597. Start: 20250323 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=599. Start: 20250323 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=598. Start: 20250327 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=601. Start: 20250323 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=603. Start: 20250323 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=600. Start: 20250327 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=604. Start: 20250327 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=605. Start: 20250323 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[INFO] Historical data end for reqId=602. Start: 20250327 16:00:00 US/Eastern, End: 20250328 16:00:00 US/Eastern
+[DEBUG] All 20 historical data requests completed.
+[INFO] All historical data requests completed or timed out.
+[INFO] Simulating 390 bars for the day across 10 symbols...
+[INFO] Daily trading state reset.
+[aggressive/NVDA] Initial Buy: 13 @ 112.13, HWM: 112.13, Stop: 111.278, InitRisk: 0.852
+[conservative/HYG] Initial Buy: 6 @ 78.93, HWM: 78.93, Stop: 78.680, InitRisk: 0.250
+[moderate/HYG] Initial Buy: 12 @ 78.93, HWM: 78.93, Stop: 78.680, InitRisk: 0.250
+[aggressive/NVDA] Closed Position: Sold 13 @ 111.56. Reason: TrailingStopHit(111.740). PnL: -7.41
+[aggressive/TQQQ] Initial Buy: 24 @ 61.27, HWM: 61.27, Stop: 60.846, InitRisk: 0.424
+[conservative/PLTR] Initial Buy: 5 @ 88.17, HWM: 88.17, Stop: 87.637, InitRisk: 0.533
+[conservative/PLTR] Closed Position: Sold 5 @ 85.50. Reason: StopLossHit(87.637). PnL: -13.35
+[aggressive/TQQQ] Closed Position: Sold 24 @ 58.85. Reason: StopLossHit(60.846). PnL: -58.08
+[aggressive/XLF] Initial Buy: 25 @ 49.36, HWM: 49.36, Stop: 49.260, InitRisk: 0.100
+[conservative/TLT] Initial Buy: 5 @ 90.09, HWM: 90.09, Stop: 89.840, InitRisk: 0.250
+[aggressive/XLF] Closed Position: Sold 25 @ 49.38. Reason: TrailingStopHit(49.381). PnL: 0.50
+[aggressive/TQQQ] Initial Buy: 25 @ 58.55, HWM: 58.55, Stop: 58.286, InitRisk: 0.264
+[aggressive/TQQQ] Closed Position: Sold 25 @ 58.37. Reason: TrailingStopHit(58.451). PnL: -4.50
+[aggressive/XLF] Initial Buy: 25 @ 49.27, HWM: 49.27, Stop: 49.170, InitRisk: 0.100
+[aggressive/XLF] Closed Position: Sold 25 @ 49.30. Reason: TrailingStopHit(49.314). PnL: 0.75
+[aggressive/TLT] Initial Buy: 16 @ 90.00, HWM: 90.00, Stop: 89.900, InitRisk: 0.100
+[aggressive/TLT] Closed Position: Sold 16 @ 89.95. Reason: TrailingStopHit(90.015). PnL: -0.80
+[aggressive/TLT] Initial Buy: 16 @ 89.91, HWM: 89.91, Stop: 89.810, InitRisk: 0.100
+[conservative/SQQQ] Initial Buy: 10 @ 37.46, HWM: 37.46, Stop: 37.210, InitRisk: 0.250
+[conservative/TLT] Closed Position: Sold 5 @ 89.84. Reason: StopLossHit(89.840). PnL: -1.25
+[aggressive/TLT] Partial Sell: Sold 4 @ 90.06. Remaining: 12. Reason: PartialTP 1 (1.5R @90.060). PnL: 0.60
+[aggressive/TLT] Marked Partial TP Level 1 as taken after selling 4. Total sold for TP: 4
+[conservative/HYG] Closed Position: Sold 6 @ 78.81. Reason: RSIOverbought(67.33>=65). PnL: -0.72
+[moderate/HYG] Closed Position: Sold 12 @ 78.81. Reason: RSIOverbought(67.33>=65). PnL: -1.44
+[aggressive/TLT] Partial Sell: Sold 4 @ 90.12. Remaining: 8. Reason: PartialTP 2 (2.0R @90.110). PnL: 0.84
+[aggressive/TLT] Marked Partial TP Level 2 as taken after selling 4. Total sold for TP: 8
+[conservative/SQQQ] Closed Position: Sold 10 @ 37.75. Reason: RSIOverbought(65.44>=65). PnL: 2.90
+[aggressive/FXI] Initial Buy: 25 @ 35.89, HWM: 35.89, Stop: 35.790, InitRisk: 0.100
+[aggressive/TLT] Closed Position: Sold 8 @ 90.14. Reason: RSIOverbought(70.58>=70). PnL: 1.84
+[aggressive/FXI] Closed Position: Sold 25 @ 35.91. Reason: TrailingStopHit(35.918). PnL: 0.50
+[aggressive/TQQQ] Initial Buy: 25 @ 57.80, HWM: 57.80, Stop: 57.591, InitRisk: 0.209
+[conservative/TLT] Initial Buy: 5 @ 90.07, HWM: 90.07, Stop: 89.820, InitRisk: 0.250
+[conservative/SOXS] Initial Buy: 10 @ 28.74, HWM: 28.74, Stop: 28.490, InitRisk: 0.250
+[aggressive/TQQQ] Closed Position: Sold 25 @ 57.80. Reason: TrailingStopHit(57.826). PnL: 0.00
+[aggressive/XLF] Initial Buy: 25 @ 49.21, HWM: 49.21, Stop: 49.110, InitRisk: 0.100
+[aggressive/XLF] Closed Position: Sold 25 @ 49.18. Reason: TrailingStopHit(49.186). PnL: -0.75
+[aggressive/BAC] Initial Buy: 25 @ 41.14, HWM: 41.14, Stop: 41.040, InitRisk: 0.100
+[conservative/SOXS] Closed Position: Sold 10 @ 29.06. Reason: RSIOverbought(67.19>=65). PnL: 3.20
+[conservative/TLT] Closed Position: Sold 5 @ 90.24. Reason: RSIOverbought(65.63>=65). PnL: 0.85
+[aggressive/BAC] Closed Position: Sold 25 @ 41.02. Reason: StopLossHit(41.040). PnL: -3.00
+[aggressive/BAC] Initial Buy: 25 @ 41.02, HWM: 41.02, Stop: 40.920, InitRisk: 0.100
+[aggressive/BAC] Closed Position: Sold 25 @ 41.05. Reason: TrailingStopHit(41.053). PnL: 0.75
+[conservative/SOXS] Initial Buy: 10 @ 28.99, HWM: 28.99, Stop: 28.740, InitRisk: 0.250
+[conservative/SQQQ] Initial Buy: 10 @ 38.20, HWM: 38.20, Stop: 37.950, InitRisk: 0.250
+[moderate/SOXS] Initial Buy: 20 @ 28.88, HWM: 28.88, Stop: 28.630, InitRisk: 0.250
+[aggressive/SOXS] Initial Buy: 25 @ 28.88, HWM: 28.88, Stop: 28.780, InitRisk: 0.100
+[aggressive/SOXS] Closed Position: Sold 25 @ 28.81. Reason: TrailingStopHit(28.819). PnL: -1.75
+[moderate/SOXS] Closed Position: Sold 20 @ 28.77. Reason: TrailingStopHit(28.799). PnL: -2.20
+[aggressive/SOXS] Initial Buy: 25 @ 28.77, HWM: 28.77, Stop: 28.669, InitRisk: 0.101
+[moderate/SQQQ] Initial Buy: 20 @ 38.04, HWM: 38.04, Stop: 37.790, InitRisk: 0.250
+[aggressive/SQQQ] Initial Buy: 25 @ 38.04, HWM: 38.04, Stop: 37.940, InitRisk: 0.100
+[moderate/SOXS] Initial Buy: 20 @ 28.73, HWM: 28.73, Stop: 28.480, InitRisk: 0.250
+[conservative/TLT] Initial Buy: 5 @ 90.18, HWM: 90.18, Stop: 89.930, InitRisk: 0.250
+[aggressive/SQQQ] Partial Sell: Sold 7 @ 38.21. Remaining: 18. Reason: PartialTP 1 (1.5R @38.190). PnL: 1.19
+[aggressive/SQQQ] Marked Partial TP Level 1 as taken after selling 7. Total sold for TP: 7
+[conservative/SOXS] Closed Position: Sold 10 @ 28.74. Reason: StopLossHit(28.740). PnL: -2.50
+[aggressive/SQQQ] Closed Position: Sold 18 @ 38.13. Reason: TrailingStopHit(38.130). PnL: 1.62
+[conservative/SOXS] Initial Buy: 10 @ 28.72, HWM: 28.72, Stop: 28.470, InitRisk: 0.250
+[aggressive/SOXS] Closed Position: Sold 25 @ 28.72. Reason: TrailingStopHit(28.727). PnL: -1.25
+[conservative/HYG] Initial Buy: 6 @ 78.78, HWM: 78.78, Stop: 78.530, InitRisk: 0.250
+[moderate/SQQQ] Closed Position: Sold 20 @ 38.19. Reason: TrailingStopHit(38.193). PnL: 3.00
+[moderate/SOXS] Closed Position: Sold 20 @ 28.77. Reason: TrailingStopHit(28.794). PnL: 0.80
+[aggressive/PLTR] Initial Buy: 17 @ 84.81, HWM: 84.81, Stop: 84.566, InitRisk: 0.244
+[aggressive/PLTR] Closed Position: Sold 17 @ 84.72. Reason: TrailingStopHit(84.755). PnL: -1.53
+[aggressive/BAC] Initial Buy: 25 @ 41.05, HWM: 41.05, Stop: 40.950, InitRisk: 0.100
+[conservative/TLT] Closed Position: Sold 5 @ 90.31. Reason: RSIOverbought(69.18>=65). PnL: 0.65
+[moderate/SOXS] Initial Buy: 20 @ 28.68, HWM: 28.68, Stop: 28.430, InitRisk: 0.250
+[aggressive/SOXS] Initial Buy: 25 @ 28.68, HWM: 28.68, Stop: 28.580, InitRisk: 0.100
+[conservative/HYG] Closed Position: Sold 6 @ 78.84. Reason: RSIOverbought(77.89>=65). PnL: 0.36
+[conservative/TLT] Initial Buy: 5 @ 90.23, HWM: 90.23, Stop: 89.980, InitRisk: 0.250
+[aggressive/SOXS] Closed Position: Sold 25 @ 28.58. Reason: StopLossHit(28.580). PnL: -2.50
+[moderate/TLT] Initial Buy: 11 @ 90.20, HWM: 90.20, Stop: 89.950, InitRisk: 0.250
+[aggressive/SOXS] Initial Buy: 25 @ 28.53, HWM: 28.53, Stop: 28.427, InitRisk: 0.103
+[moderate/SOXS] Closed Position: Sold 20 @ 28.43. Reason: StopLossHit(28.430). PnL: -5.00
+[aggressive/SOXS] Closed Position: Sold 25 @ 28.43. Reason: TrailingStopHit(28.450). PnL: -2.50
+[moderate/SOXS] Initial Buy: 20 @ 28.42, HWM: 28.42, Stop: 28.170, InitRisk: 0.250
+[aggressive/SOXS] Initial Buy: 25 @ 28.42, HWM: 28.42, Stop: 28.311, InitRisk: 0.109
+[conservative/SOXS] Closed Position: Sold 10 @ 28.45. Reason: StopLossHit(28.470). PnL: -2.70
+[aggressive/BAC] Closed Position: Sold 25 @ 41.11. Reason: TrailingStopHit(41.142). PnL: 1.50
+[aggressive/SOXS] Partial Sell: Sold 7 @ 28.59. Remaining: 18. Reason: PartialTP 1 (1.5R @28.583). PnL: 1.19
+[aggressive/SOXS] Marked Partial TP Level 1 as taken after selling 7. Total sold for TP: 7
+[aggressive/FXI] Initial Buy: 25 @ 35.80, HWM: 35.80, Stop: 35.700, InitRisk: 0.100
+[aggressive/SOXS] Partial Sell: Sold 7 @ 28.65. Remaining: 11. Reason: PartialTP 2 (2.0R @28.638). PnL: 1.61
+[aggressive/SOXS] Marked Partial TP Level 2 as taken after selling 7. Total sold for TP: 14
+[aggressive/SOXS] Partial Sell: Sold 10 @ 28.80. Remaining: 1. Reason: PartialTP 3 (3.0R @28.747). PnL: 3.80
+[aggressive/SOXS] Marked Partial TP Level 3 as taken after selling 10. Total sold for TP: 24
+[moderate/SOXS] Closed Position: Sold 20 @ 28.83. Reason: RSIOverbought(65.73>=65). PnL: 8.20
+[moderate/TLT] Closed Position: Sold 11 @ 90.19. Reason: TrailingStopHit(90.190). PnL: -0.11
+[conservative/HYG] Initial Buy: 6 @ 78.84, HWM: 78.84, Stop: 78.590, InitRisk: 0.250
+[conservative/SQQQ] Closed Position: Sold 10 @ 38.43. Reason: RSIOverbought(67.57>=65). PnL: 2.30
+[aggressive/SOXS] Closed Position: Sold 1 @ 29.05. Reason: RSIOverbought(73.12>=70). PnL: 0.63
+[moderate/HYG] Initial Buy: 12 @ 78.81, HWM: 78.81, Stop: 78.560, InitRisk: 0.250
+[conservative/SQQQ] Initial Buy: 10 @ 38.26, HWM: 38.26, Stop: 38.010, InitRisk: 0.250
+[conservative/SOXS] Initial Buy: 10 @ 28.85, HWM: 28.85, Stop: 28.600, InitRisk: 0.250
+[moderate/TLT] Initial Buy: 11 @ 90.15, HWM: 90.15, Stop: 89.900, InitRisk: 0.250
+[moderate/HYG] Closed Position: Sold 12 @ 78.81. Reason: TrailingStopHit(78.826). PnL: 0.00
+[aggressive/FXI] Closed Position: Sold 25 @ 35.81. Reason: TrailingStopHit(35.813). PnL: 0.25
+
+[INFO] Market exit time (15:55:00) reached at bar 389. Closing open positions.
+[conservative/TLT] EOD Exit: Selling 5 shares.
+[conservative/TLT] Closed Position: Sold 5 @ 90.17. Reason: EndOfDayExit. PnL: -0.30
+[conservative/HYG] EOD Exit: Selling 6 shares.
+[conservative/HYG] Closed Position: Sold 6 @ 78.81. Reason: EndOfDayExit. PnL: -0.18
+[conservative/SQQQ] EOD Exit: Selling 10 shares.
+[conservative/SQQQ] Closed Position: Sold 10 @ 38.31. Reason: EndOfDayExit. PnL: 0.50
+[conservative/SOXS] EOD Exit: Selling 10 shares.
+[conservative/SOXS] Closed Position: Sold 10 @ 28.87. Reason: EndOfDayExit. PnL: 0.20
+[moderate/TLT] EOD Exit: Selling 11 shares.
+[moderate/TLT] Closed Position: Sold 11 @ 90.17. Reason: EndOfDayExit. PnL: 0.22
+
+[INFO] Simulation loop completed for the day.
+
+--- End of Run Summary ---
+[Profile: conservative]
+  Starting capital: 2000.00
+  Final portfolio value: 2000.98
+  Net PnL: 0.98 (0.05%)
+  Max drawdown: 1.27%
+[Profile: moderate]
+  Starting capital: 2000.00
+  Final portfolio value: 1996.85
+  Net PnL: -3.15 (-0.16%)
+  Max drawdown: 0.96%
+[Profile: aggressive]
+  Starting capital: 2000.00
+  Final portfolio value: 1907.67
+  Net PnL: -92.33 (-4.62%)
+  Max drawdown: 5.82%
+
+Average Final Value: 1968.50
+Average Net PnL: -31.50 (-1.57%)
+[MAIN] Backtest completed. Closing logs and exiting.
+[DEBUG] ***** disconnect() CALLED *****
+[DEBUG] Initiating disconnection process...
+[DEBUG] Calling EClient.disconnect()...
+[DEBUG] EClient.disconnect() finished.
+[DEBUG] ***** disconnect() CALLED *****
+[DEBUG] Disconnect already called or not connected. Ignoring.
+[DEBUG] API thread: self.run() EXITED.
+[DEBUG] API thread: Exiting run_loop. Final self.isConnected(): False
+[INFO] Finalizing workflow...
+[INFO] Closing logger for profile: conservative

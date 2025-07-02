@@ -1,0 +1,604 @@
+Here is what I am trying to do:
+Ok, so I want to revisit the logic for the algo. I am more clear on what I want exactly, below will be the details of what should happen in chronological order. Once you have reviewed everything, I want you to give me the revised folder structure and let me know which files I will need, before getting into any coding. Then I will give you my existing code for overlapping files (files already created and still needed in new version) and you will give me amended code for those.
+
+The main concept here is that we will select stocks to trade, then we will decide when to trade (buy/sell), then we will collect results. But the key thing is that we will have 2 phases of the algo process, Buy Mode and Sell mode. This means that if we hold a stock already, we will always be in sell mode. Conversely if we do not hold any shares, we will always be in buy mode. The idea is that we will treat each one of the trades as an experiment and collect all of the data considered, the decision, and the result. Each trade (starting with a buy and ending with a sell) will be listed in a isolated log file so that we can review and potentially train a model on it later on.
+
+
+Step 1:
+10 minutes before the start of trading day (9.30 AM EST Monday-Friday), wake up the Algo and query portfolio to see how many stocks (Symbols) are present and what those are. Also find out what is the portfolio value (net liquidity).
+If less than 20 (8 for example), run the market scanner to find a maximum of 5 stocks to add. The total of stocks from scanner + portfolio holdings ( total symbols to be traded that day) should never exceed 20 and number of stocks taken from the scanner should never exceed 5.
+Scanner conditions: I leave it up to you to come up with parameters for the scan that will be best suited for the algo to be successful, but max stock price should be 50 USD.
+
+Outcome: List of 1 - 20 stock symbols with immense potential have been carefully (or forcibly for portfolio stocks) selected for trading.
+
+
+Step 2:
+Create a Symbol data log (text) for each symbol for that day labelling if it was an existing symbol or a new one (from scanner).
+Fetch news headlines (up to 10/symbol) for each symbol on the list using IBKR API for the last 3 days (including today + 3 full previous days). Include all results in the appropriate log file.
+Run the FinBert ML Model to detect the sentiment across the various news headline for each symbol and include the result in the appropriate log file.
+Store the sentiment for each symbol in variables to be used in later decision making.
+
+Outcome: A sentiment based on News headlines has been attached to each symbol and will be considered for all trading decisions throughout the entire day. A log file with symbol specific details has been started.
+
+
+Step 3:
+Segregate the symbols into 2 groups, Buy and Sell, so that they can follow different processes.
+For all symbols, collect historical data (define an appropriate horizon for this yourself but include in configs) to get some context. You will decide what historical financial values are most valuable for the Algo to look at, it may differ depending if the symbols are in the Buy or the Sell group. 
+Wait for start of trading day (9.30 AM EST).
+Start collecting data (again you will decide what historical financial values are most valuable for the Algo to look at, it may differ depending if the symbols are in the Buy or the Sell group)
+
+Pre-established logic: Define a set of parameters that will rank the current state of the stock from 0 to 100 (100 being a strong Buy or Sell and 0 being a strong do nothing or hold). This ranking will be based on financial metrics as mentioned earlier in the chat such as MA, Bollinger, volatility, etc... These values will be collected at from historical data at start of day and live during the day. The higher the ranking, the more confident the algo is that the stock will start moving in the opposite direction. Could be separate logics for the Buy and Sell groups but the goal is the same, knowing with highest confidence possible when to take action.
+
+Group/Mode 1 (Buy)
+Issue a ranking every 1 minutes
+If ranking exceeds adaptive threshold, this means the algo is 95% (example adaptive value) sure that the stock will start trending up (meaning we're at the lowest price point in near term) and will trigger the next step.
+If less than 95% (again example adaptive value), the algo continues to loop back every 1 minutes
+
+Group/Mode 2 (Sell)
+Issue a ranking every 1 minute
+If ranking exceeds adaptive threshold, this means the algo is 80% (exmaple adaptive value) sure that the stock will start trending down (meaning we're at the highest return point in near term) and will trigger the next step.
+If less than 80% (again exmaple adaptive value), the algo continues to loop back every 1 minutes
+Another reason to exit the trade would be if the trade has been open for more than 3 days.
+Another reason to exit the trade would be if the price drops below adaptive stop loss threshold percentage of the Average Price of the current position (stop loss).
+Another reason to exit the trade would be if the price rises above adaptive take profit threshold percentage of the Average Price of the current position (take profit).
+
+You must design the logic for these adaptive thresholds, but my guess would be that they should be based on volatility and other metrics such as that. in any case, params of your logic will be editable in configs.
+
+
+Step 4:
+Place a buy or sell order and add it to the Symbol data log including position size.
+Buy order should be SMART order, then algo should be stuck in a loop for 10 minutes, or until the order has been filled. If 10 minutes expire, then the algo should go back to step 3 and wait for a buy signal again.
+Sell order should always be all shares in the portfolio for that symbol but if not filled within 2 minutes, order params should be modified / order resubmitted for better fill chance.
+
+Now, for the number of shares to buy: If Sentiment and Financial score align, buy 5 otherwise buy 1.
+For the number of shares to sell: Sell all.
+
+
+Step 5:
+In case of a buy trade, create a file (unique file for each buy trade) which will include all of the historical data considered, the live data, sentiment, financial metrics analyzed and their values, ranking scores, and any other data I might have missed. Then wait for the sale of that trade (termination / exit). In other words, go back to Step 3 but in Sell mode this time.
+
+In case of a sell trade, append same information previously entered (but for Sell Cycle) to the existing file contents for the file already created upon opening of the trade and label it as a Profit or a loss according to the outcome. Then go back to Step 3 but in Buy mode this time.
+
+The file above will be used for reinforcement learning / insights on what params to change when we go through back testing.
+
+
+Step 6:
+Query the IBKR API and find out what is the portfolio value (net liquidity), remember what the starting value was at start of day, look at the individual Symbol data logs, include all this into a prompt for the OpenAI API to summarize and craft into a nice daily Algo update message, which will be delivered by email.
+Trading day ends, The summary progress and historical data should be saved and algo should go into energy saving mode. 
+
+Back-testing:
+This should be provisioned in every step.
+Select 20 stocks from the scanner using the predefined Scanner conditions.
+Start at a specific date and fetch historical news and financial data (by the minute or whatever the Finance ranking frequency is set to in configs) for each symbol selected for 1 full month from the start date.
+Run through the algo, simulating Buy/Sell decisions every minute (but obviously do it much faster since all data is there) and keep a log for each stock/symbol of the decisions made and money made, so you can give a total loss/gain at the end of the period (1 month), end the simulation at any time if the algo runs out of budget. We will assume that all orders get filled immediately at the mid price.
+
+
+Configuration File:
+Max stock price to include in scanner search
+Total Budget
+Number of Shares to buy / sell
+Live mode vs Historical mode (testing)
+Number of max symbols to be traded simultaneously
+Number of max stocks to retain per scan
+News lookback horizon
+Number of news headlines
+Historical data horizon for financials decision
+Adaptive threshold for Buy
+Adaptive threshold for Sell
+Adaptive Stop Loss
+Adaptive Take Profit
+Max days open for Sell trades
+Max loss cap
+Finance ranking frequency
+Back-testing params (start date, end date, number of stocks, etc...)
+Email for daily updates
+Expiry time for Buy orders
+Open AI creds
+IBKR API params
+
+I have identified the project structure to be something like this:
+
+TradingBot/                        # Root folder of the project
+├── config/                        # Configuration files
+│   └── config.json                # All user‐defined parameters (scanner criteria, adaptive thresholds, IBKR API credentials, email settings, backtesting parameters, etc.)
+│
+├── core/                          # Core trading logic and workflow modules
+│   ├── main.py                    # Main entry point for launching the live trading system
+│   ├── trade_execution.py         # IBKR API integration (order placement, execution, callbacks, failover, etc.)
+│   ├── data_fetcher.py            # Module for retrieving live and historical market data and computing technical indicators
+│   ├── scanner.py                 # Market scanning module (pre‐market scanning to select potential stocks)
+│   ├── strategy.py                # Core strategy logic that segregates symbols into Buy and Sell modes, computes ranking scores, triggers orders, etc.
+│   └── trade_logger.py            # Module to create and manage per-symbol trade logs (logging all data from entry to exit for each trade)
+│
+├── ai_models/                     # Artificial intelligence and machine learning modules
+│   ├── finbert_model.py           # Loads and runs FinBERT for sentiment analysis on news headlines
+│   └── chatgpt_interface.py       # (Optional) Integration with OpenAI ChatGPT for daily update messaging and possibly trade validation
+│
+├── backtesting/                   # Modules for running simulation/backtesting
+│   ├── backtester.py              # Backtesting framework that simulates the trading process on historical data
+│   └── simulation_engine.py       # Engine to replay historical data and simulate trades minute‐by‐minute
+│
+├── ui/                            # User interface (desktop application)
+│   └── app.py                     # PyQt5-based UI that displays active tickers, detailed charts (with drill‐down), logs, and parameters
+│
+├── utils/                         # Utility modules and helpers
+│   ├── logger.py                  # Comprehensive logging utility (error log, trade/price log, ML/RL log, etc.)
+│   ├── email_alerts.py            # Module to send email notifications for outages and daily updates
+│   └── helpers.py                 # Miscellaneous helper functions
+│
+├── data/                          # Data storage for logs and simulation outputs
+│   └── logs/                      # Folder where all log files are stored (organized by date and type)
+│
+├── requirements.txt               # List of Python dependencies for installation via pip
+└── README.md                      # Project documentation and instructions
+
+here are the file I have so far:
+
+main.py
+"""
+main.py
+
+Main entry point for the trading bot.
+Loads configuration, initializes the TradeExecutionApp and DataFetcher,
+and starts the trading process in the selected mode (historical or live).
+"""
+
+import json
+import os
+import threading
+import time
+
+from core.trade_execution import TradeExecutionApp
+from core.data_fetcher import DataFetcher
+
+def load_config(config_path="config/config.json"):
+    """Loads configuration from the specified JSON file."""
+    with open(config_path, "r") as f:
+        return json.load(f)
+
+def main():
+    # Load configuration.
+    config = load_config()
+    
+    # Initialize IBKR client (TradeExecutionApp) with the config.
+    ib_client = TradeExecutionApp(config)
+    ib_client.connect_to_ib()
+    
+    # Start the IBKR network loop on a background thread.
+    api_thread = threading.Thread(target=ib_client.run_loop, daemon=True)
+    api_thread.start()
+    
+    # Create a DataFetcher instance.
+    fetcher = DataFetcher(ib_client, config)
+    
+    # For demonstration, request historical data for a symbol (e.g., "AAPL").
+    fetcher.request_historical_data("AAPL")
+    
+    # Wait to allow data to be received.
+    time.sleep(10)
+    
+    # Compute and print technical indicators.
+    indicators = fetcher.compute_indicators()
+    print("Computed Indicators:")
+    print(indicators)
+    
+    # Keep the application running.
+    print("Bot is running. Press Ctrl+C to exit.")
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("Shutting down...")
+    finally:
+        ib_client.disconnect()
+
+if __name__ == "__main__":
+    main()
+
+
+config.json
+{
+    "mode": "live",
+    "ibkr": {
+      "host": "127.0.0.1",
+      "port": 4002,
+      "client_id": 1
+    },
+    "account": {
+      "initial_capital": 10000.0,
+      "risk_per_trade": 0.01
+    },
+    "scanner": {
+      "max_stock_price": 50.0,
+      "max_total_symbols": 20,
+      "max_new_symbols": 5
+    },
+    "news": {
+      "lookback_days": 3,
+      "max_headlines": 10
+    },
+    "historical": {
+      "start_date": "20250305",
+      "data_horizon_minutes": 390,
+      "data_frequency": "1 min"
+    },
+    "adaptive": {
+      "buy_threshold": 95,
+      "sell_threshold": 80,
+      "adaptive_stop_loss_pct": 0.95,
+      "adaptive_take_profit_pct": 1.20,
+      "max_days_open": 3,
+      "finance_ranking_frequency": 1
+    },
+    "order": {
+      "buy_shares_aligned": 5,
+      "buy_shares_not_aligned": 1,
+      "sell_shares": "all",
+      "buy_order_expiry_minutes": 10,
+      "sell_order_timeout_minutes": 2
+    },
+    "backtesting": {
+      "start_date": "20250101",
+      "end_date": "20250131",
+      "max_symbols": 20
+    },
+    "email": {
+      "recipient": "your_email@example.com",
+      "smtp_server": "smtp.example.com",
+      "smtp_port": 587,
+      "username": "your_username",
+      "password": "your_password"
+    },
+    "openai": {
+      "api_key": "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"
+    }
+  }
+  
+  data_fetcher.py
+
+  """
+data_fetcher.py
+
+This module retrieves market data (live and historical) from IBKR and computes
+technical indicators such as the Simple Moving Average (SMA) and the Relative Strength Index (RSI).
+
+It uses configuration parameters to determine the operating mode:
+  - "historical" mode: fetches data based on a fixed simulation date and simulates a full trading day (390 minutes)
+  - "live" mode: uses the current time to request historical data (for paper trading).
+"""
+
+import time
+from datetime import datetime, timedelta
+import numpy as np
+import pandas as pd
+from ibapi.contract import Contract
+from ibapi.common import BarData
+import pytz
+
+class DataFetcher:
+    def __init__(self, ib_client, config):
+        """
+        Initializes the DataFetcher.
+        
+        Parameters:
+          ib_client: Instance of your IBKR client (e.g. TradeExecutionApp).
+          config: Configuration dictionary loaded from config/config.json.
+        """
+        self.ib_client = ib_client
+        self.config = config
+        self.mode = self.config.get("mode", "live").lower()
+        # Lists to store price data.
+        self.live_data = []         # Used in live mode (one data point per minute)
+        self.historical_data = []   # Stores historical close prices
+
+    def create_contract(self, symbol: str):
+        """
+        Helper method to build an IBKR stock contract.
+        """
+        contract = Contract()
+        contract.symbol = symbol
+        contract.secType = "STK"
+        contract.exchange = "SMART"
+        contract.currency = "USD"
+        return contract
+
+    def request_live_data(self, symbol: str):
+        """
+        Request live market data for the given symbol.
+        (Live data callbacks should be implemented in the IBKR client.)
+        """
+        contract = self.create_contract(symbol)
+        req_id = 101  # Example request ID for live data.
+        self.ib_client.reqMktData(req_id, contract, "", False, False, [])
+        print(f"Requested live data for {symbol} with reqId {req_id}")
+
+    def request_historical_data(self, symbol: str):
+        """
+        Request historical market data for the given symbol.
+        
+        In "historical" mode, it uses the fixed simulation date from config and fetches data up to market close.
+        In "live" mode, it uses the current time.
+        """
+        contract = self.create_contract(symbol)
+        req_id = 102  # Example request ID for historical data.
+        
+        if self.mode == "historical":
+            # Use the fixed simulation date from config (e.g., "20250305")
+            sim_date_str = self.config["historical"]["start_date"]
+            # Use market close time (16:00:00) with space (format: "YYYYMMDD HH:MM:SS US/Eastern")
+            end_time_str = f"{sim_date_str} 16:00:00 US/Eastern"
+            duration = "1 D"
+            bar_size = self.config["historical"]["data_frequency"]
+            print(f"Simulating historical data for {symbol} from {end_time_str} for duration {duration}")
+            self.ib_client.reqHistoricalData(req_id, contract, end_time_str, duration, bar_size, "TRADES", 1, 1, False, [])
+        else:
+            # Live mode: use the current time.
+            eastern = pytz.timezone("US/Eastern")
+            now_eastern = datetime.now(eastern)
+            end_time_str = now_eastern.strftime("%Y%m%d %H:%M:%S US/Eastern")
+            duration = "1 D"
+            bar_size = "1 min"
+            # Use use_rth=1 (only regular trading hours) as per your previously working code.
+            print(f"Requesting historical data for {symbol} with end time {end_time_str} (live mode, use_rth=1)")
+            self.ib_client.reqHistoricalData(req_id, contract, end_time_str, duration, bar_size, "TRADES", 1, 1, False, [])
+            
+    def on_historical_data(self, reqId: int, bar: BarData):
+        """
+        Callback method for each historical bar received from IBKR.
+        Stores the closing price in the historical_data list.
+        """
+        self.historical_data.append(bar.close)
+        print(f"Historical data received: {bar.date} - Close: {bar.close}")
+
+    def calculate_SMA(self, data, window=10):
+        """
+        Calculate the Simple Moving Average (SMA) for the provided data.
+        
+        Parameters:
+          data: List or array of price data.
+          window: Number of data points to average.
+          
+        Returns:
+          List of SMA values.
+        """
+        series = pd.Series(data)
+        sma = series.rolling(window=window).mean().tolist()
+        return sma
+
+    def calculate_RSI(self, data, window=14):
+        """
+        Calculate the Relative Strength Index (RSI) for the provided data.
+        
+        Parameters:
+          data: List or array of price data.
+          window: Number of data points for the calculation.
+          
+        Returns:
+          List of RSI values.
+        """
+        prices = pd.Series(data)
+        delta = prices.diff()
+        up = delta.clip(lower=0)
+        down = -1 * delta.clip(upper=0)
+        avg_gain = up.rolling(window=window).mean()
+        avg_loss = down.rolling(window=window).mean()
+        rs = avg_gain / avg_loss
+        rsi = 100 - (100 / (1 + rs))
+        return rsi.tolist()
+
+    def compute_indicators(self):
+        """
+        Computes technical indicators from the historical data.
+        
+        Returns:
+          Dictionary with keys 'SMA_10' and 'RSI_14', containing lists of indicator values.
+        """
+        indicators = {}
+        if self.historical_data:
+            indicators['SMA_10'] = self.calculate_SMA(self.historical_data, window=10)
+            indicators['RSI_14'] = self.calculate_RSI(self.historical_data, window=14)
+        else:
+            print("No historical data available to compute indicators.")
+        return indicators
+
+############################################
+# Test Harness (for standalone testing)
+############################################
+if __name__ == "__main__":
+    import json
+    import os
+    # Construct the path to config.json relative to this file.
+    config_path = os.path.join(os.path.dirname(__file__), "..", "config", "config.json")
+    with open(config_path, "r") as f:
+        config = json.load(f)
+    
+    from core.trade_execution import TradeExecutionApp
+    ib_client = TradeExecutionApp(config)
+    ib_client.connect_to_ib()
+    
+    import threading
+    api_thread = threading.Thread(target=ib_client.run_loop, daemon=True)
+    api_thread.start()
+    
+    fetcher = DataFetcher(ib_client, config)
+    fetcher.request_historical_data("AAPL")
+    
+    time.sleep(15)  # Wait longer to allow data retrieval.
+    
+    indicators = fetcher.compute_indicators()
+    print("Computed Indicators:")
+    print(indicators)
+
+
+and trade_execution
+"""
+trade_execution.py
+
+Handles connecting to IBKR, placing/canceling orders, tracking executions, and fetching historical news.
+Uses the real IBKR API connection (to your paper trading account).
+"""
+
+import time
+from datetime import datetime
+from ibapi.client import EClient
+from ibapi.wrapper import EWrapper
+from ibapi.contract import Contract
+from ibapi.order import Order
+
+class IBKRWrapper(EWrapper):
+    """Handles IBKR callbacks and events."""
+    def __init__(self):
+        super().__init__()
+
+    def nextValidId(self, order_id: int):
+        """Called automatically when connected; provides the first valid order ID."""
+        super().nextValidId(order_id)
+        self.next_order_id = order_id
+        print(f"[INFO] Next Valid Order ID received: {order_id}")
+
+    def orderStatus(self, orderId, status, filled, remaining, avgFillPrice, permId,
+                    parentId, lastFillPrice, clientId, whyHeld, mktCapPrice):
+        """Called automatically to update order status."""
+        super().orderStatus(orderId, status, filled, remaining,
+                            avgFillPrice, permId, parentId,
+                            lastFillPrice, clientId, whyHeld, mktCapPrice)
+        print(f"[ORDER STATUS] ID={orderId}, Status={status}, Filled={filled}, AvgPrice={avgFillPrice}")
+
+    def historicalNews(self, reqId, time_stamp, providerCode, articleId, headline):
+        """Callback for each news headline received."""
+        print(f"[NEWS] Headline received: {headline}")
+        if hasattr(self, "news_storage"):
+            self.news_storage.append(headline)
+
+    def historicalNewsEnd(self, reqId, hasMore):
+        """Called when the historical news feed is finished."""
+        print("[NEWS] Finished receiving historical news.")
+
+    def contractDetails(self, reqId, details):
+        """Collect contract details."""
+        if not hasattr(self, "contract_details"):
+            self.contract_details = []
+        self.contract_details.append(details)
+
+    def contractDetailsEnd(self, reqId):
+        """Signals end of contract details."""
+        print("[CONTRACT] Finished receiving contract details.")
+
+class IBKRClient(EClient):
+    """Handles outgoing requests to IBKR."""
+    def __init__(self, wrapper):
+        super().__init__(wrapper)
+
+class TradeExecutionApp(IBKRWrapper, IBKRClient):
+    """Combines EWrapper and EClient for IBKR operations."""
+    def __init__(self, config_dict):
+        IBKRWrapper.__init__(self)
+        IBKRClient.__init__(self, wrapper=self)
+        
+        # Load configuration.
+        self.config = config_dict
+        self.host = self.config["ibkr"]["host"]
+        self.port = self.config["ibkr"]["port"]
+        self.client_id = self.config["ibkr"]["client_id"]
+        self.next_order_id = None
+        
+        # For news and contract details.
+        self.available_news_providers = []
+        self.news_storage = []
+        self.contract_details = []
+
+    def connect_to_ib(self):
+        """Connect to IBKR using config details."""
+        print(f"Connecting to IBKR at {self.host}:{self.port} with client_id={self.client_id}")
+        self.connect(self.host, self.port, self.client_id)
+
+    def run_loop(self):
+        """Start the IBKR network loop (blocking)."""
+        self.run()
+
+    def create_contract(self, symbol: str) -> Contract:
+        """Creates and returns a contract for the given stock symbol."""
+        contract = Contract()
+        contract.symbol = symbol
+        contract.secType = "STK"
+        contract.exchange = "SMART"
+        contract.currency = "USD"
+        return contract
+
+    def place_market_order(self, symbol: str, action: str, quantity: int):
+        """
+        Places a market order for the given symbol.
+        Action must be "BUY" or "SELL".
+        """
+        if self.next_order_id is None:
+            print("No valid order ID yet. Connect and wait for nextValidId before placing orders.")
+            return
+
+        contract = self.create_contract(symbol)
+        order = Order()
+        order.action = action.upper()
+        order.orderType = "MKT"
+        order.totalQuantity = quantity
+        order.transmit = True
+
+        # Disable any undesired order attributes.
+        order.eTradeOnly = False
+        order.firmQuoteOnly = False
+
+        print(f"Placing {action} order for {quantity} shares of {symbol}.")
+        self.placeOrder(self.next_order_id, contract, order)
+        self.next_order_id += 1
+
+    def get_conid_for_symbol(self, symbol: str):
+        """
+        Requests contract details and returns the contract conId.
+        Waits briefly for details to be received.
+        """
+        self.contract_details = []
+        req_id = 5000
+        contract = self.create_contract(symbol)
+        self.reqContractDetails(req_id, contract)
+        time.sleep(2)
+        if self.contract_details:
+            return self.contract_details[0].contract.conId
+        else:
+            print(f"[NEWS] No contract details received for {symbol}.")
+            return None
+
+    def fetch_historical_news(self, symbol: str, start_time: str, end_time: str):
+        """
+        Fetches historical news headlines for a given symbol between start_time and end_time.
+        Time format should be "YYYYMMDD-HH:MM:SS".
+        Returns a list of headlines.
+        """
+        self.news_storage = []  # Reset storage.
+        # Request news providers if not available.
+        if not self.available_news_providers:
+            self.reqNewsProviders()
+            time.sleep(2)
+        if not self.available_news_providers:
+            print("[NEWS] No news providers available.")
+            return []
+        con_id = self.get_conid_for_symbol(symbol)
+        if con_id is None:
+            print(f"[NEWS] Could not get conId for {symbol}.")
+            return []
+        provider_code = self.available_news_providers[0].code  # Use first provider.
+        req_id = 9999
+        print(f"[NEWS] Requesting historical news for {symbol} using provider {provider_code} from {start_time} to {end_time}.")
+        self.reqHistoricalNews(
+            reqId=req_id,
+            conId=con_id,
+            providerCodes=provider_code,
+            startDateTime=start_time,
+            endDateTime=end_time,
+            totalResults=20,
+            historicalNewsOptions=[]
+        )
+        time.sleep(3)
+        return self.news_storage
+
+
+Things are not working out right now.
+
+I need you to take over the development as I am a beginer coder. Can you amend my scripts and improve them and set me up to test what I have so far?

@@ -1,0 +1,243 @@
+{
+  "mode": "historical",
+
+  "ibkr": {
+    "host": "127.0.0.1",
+    "port": 4002,
+    "client_id": 1
+  },
+
+  "paths": {
+    "transactions_folder": "D:\\IBKR API\\Trading Bot\\TradingBotFinal\\logs\\transactions",
+    "full_folder": "D:\\IBKR API\\Trading Bot\\TradingBotFinal\\logs\\full"
+  },
+
+  "account": {
+    "initial_capital": 2000.0
+  },
+
+  "historical": {
+    "start_date": "",
+    "data_frequency": "1 min"
+  },
+
+  "backtesting": {
+    "use_date_range": true,
+    "start_date": "20250401",
+    "end_date": "20250430"
+  },
+
+  "scanner": {
+    "max_total_symbols": 20,
+    "max_new_symbols": 10,
+    "settings": {
+      "scanCode": "MOST_ACTIVE",
+      "instrument": "STK",
+      "locationCode": "STK.US.MAJOR",
+      "abovePrice": 25.0,
+      "belowPrice": 100.0
+    }
+  },
+
+  "risk_profile": "moderate", 
+
+  "risk_profiles": {
+    "conservative": {
+      "rsi_period": 14,
+      "rsi_overbought": 65,
+      "rsi_oversold": 40,
+
+      "stop_loss_pct": 0.98,
+      "use_atr_stop": true,
+      "atr_stop_multiplier": 1.0, 
+      "atr_multiplier": 2.0,
+
+      "take_profit_base": 1.02,
+      "take_profit_bump": 0.03,
+      "fast_move_threshold": 0.005,
+
+      "macd_confirmation": false,
+
+      "min_risk_per_share": 0.25,
+      "max_shares_per_trade": 10,
+      "max_position_value": 500,
+
+      "indicator_switches": {
+        "use_rsi": true,
+        "use_macd": true,
+        "use_sma20": true,
+        "use_sma50": false,
+        "use_vwap": true,
+        "use_15min_trend": true
+      },
+
+      "partial_tp_levels": [
+        {
+          "multiple_of_risk": 2.0,
+          "sell_fraction": 0.5
+        },
+        {
+          "multiple_of_risk": 3.0,
+          "sell_fraction": 0.25
+        }
+      ],
+
+      "drawdown_protection": {
+        "enable_daily_drawdown_limit": true,
+        "daily_drawdown_limit_pct": 10.0,
+        "enable_total_drawdown_limit": false,
+        "total_drawdown_limit_pct": 25.0
+      },
+
+      "risk_per_trade": 0.03,
+      "enable_trailing_stop": false,
+      "trailing_multiplier": 2.0,
+      "partial_take_profit": true,
+      "partial_take_profit_ratio": 2.0,
+
+      "position_size": 5,
+      
+      "averaging_down": {
+        "enable": true,                   
+        "max_entries": 2,                
+        "rsi_offset": 5.0,                
+        "risk_fraction": 0.5              
+      }
+    },
+
+    "moderate": {
+      "rsi_period": 14,
+      "rsi_overbought": 65,
+      "rsi_oversold": 35,
+
+      "stop_loss_pct": 0.98,
+      "use_atr_stop": true,
+      "atr_stop_multiplier": 2.0, 
+      "atr_multiplier": 2.0,
+
+      "take_profit_base": 1.03,
+      "take_profit_bump": 0.05,
+      "fast_move_threshold": 0.007,
+
+      "macd_confirmation": false,
+
+      "min_risk_per_share": 0.25,
+      "max_shares_per_trade": 20,
+      "max_position_value": 1000,
+
+      "indicator_switches": {
+        "use_rsi": true,
+        "use_macd": true,
+        "use_sma20": true,
+        "use_sma50": false,
+        "use_vwap": true,
+        "use_15min_trend": true
+      },
+
+      "partial_tp_levels": [
+        {
+          "multiple_of_risk": 2.0,
+          "sell_fraction": 0.5
+        },
+        {
+          "multiple_of_risk": 3.0,
+          "sell_fraction": 0.25
+        }
+      ],
+
+      "drawdown_protection": {
+        "enable_daily_drawdown_limit": true,
+        "daily_drawdown_limit_pct": 10.0,
+        "enable_total_drawdown_limit": false,
+        "total_drawdown_limit_pct": 25.0
+      },
+
+      "risk_per_trade": 0.07,
+      "enable_trailing_stop": true,
+      "trailing_multiplier": 1.5,
+      "partial_take_profit": true,
+      "partial_take_profit_ratio": 2.0,
+
+      "position_size": 10,
+      
+      "averaging_down": {
+        "enable": true,                   
+        "max_entries": 2,                
+        "rsi_offset": 5.0,                
+        "risk_fraction": 0.5              
+      }
+    },
+
+    "aggressive": {
+      "rsi_period": 14,
+      "rsi_overbought": 70,
+      "rsi_oversold": 35,
+
+      "stop_loss_pct": 0.95,
+      "use_atr_stop": true,
+      "atr_stop_multiplier": 1.5,
+
+      "atr_multiplier": 2.0,
+
+      "take_profit_base": 1.05,
+      "take_profit_bump": 0.08,
+
+      "fast_move_threshold": 0.007,
+
+      "macd_confirmation": false,
+
+      "min_risk_per_share": 0.10,
+
+      "max_shares_per_trade": 25,
+      "max_position_value": 1500,
+
+      "indicator_switches": {
+        "use_rsi": true,
+        "use_macd": true,
+        "use_sma20": true,
+        "use_sma50": false,
+        "use_vwap": false,
+        "use_15min_trend": false
+      },
+
+      "partial_tp_levels": [
+        {
+          "multiple_of_risk": 1.5,
+          "sell_fraction": 0.3
+        },
+        {
+          "multiple_of_risk": 2.0,
+          "sell_fraction": 0.3
+        },
+        {
+          "multiple_of_risk": 3.0,
+          "sell_fraction": 0.4
+        }
+      ],
+
+      "drawdown_protection": {
+        "enable_daily_drawdown_limit": true,
+        "daily_drawdown_limit_pct": 10.0,
+        "enable_total_drawdown_limit": false,
+        "total_drawdown_limit_pct": 25.0
+      },
+
+      "risk_per_trade": 0.20,
+
+      "enable_trailing_stop": true,
+      "trailing_multiplier": 1.2,
+
+      "partial_take_profit": true,
+      "partial_take_profit_ratio": 3.0,
+
+      "position_size": 20,
+      
+      "averaging_down": {
+        "enable": true,                   
+        "max_entries": 2,                
+        "rsi_offset": 5.0,                
+        "risk_fraction": 0.5              
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+TradingBot/                               # Root folder
+├── config/
+│   └── config.json                       # Central config for IBKR creds, thresholds, scanning criteria, etc.
+│
+├── core/
+│   ├── main.py                           # **Main entry point** for launching in "live" or "historical" (backtest) mode
+│   ├── workflow_manager.py               # **New**: Orchestrates your Step 1–6 daily process:
+│   │                                     #   1) Pre-market checks (portfolio, scanner)
+│   │                                     #   2) Log creation, news fetch & sentiment
+│   │                                     #   3) Buy vs Sell mode logic, ranking calculations (calls into strategy.py)
+│   │                                     #   4) Order placement & waiting logic
+│   │                                     #   5) Trade logs & data-file creation/appending
+│   │                                     #   6) End-of-day summary with OpenAI & email
+│   ├── trade_execution.py                # IBKR API integration (orders, fills, callbacks, failovers)
+│   ├── data_fetcher.py                   # Retrieves (live or historical) data & basic technical indicators
+│   ├── scanner.py                        # Pre-market or standard scanning for potential new symbols
+│   ├── strategy.py                       # Central “decision logic” and ranking scores for Buy vs Sell modes
+│   └── trade_logger.py                   # Manages trade logs (symbol files, “experiment” files for each trade, etc.)
+│
+├── ai_models/
+│   ├── finbert_model.py                  # Loads & runs FinBERT for news headline sentiment
+│   └── chatgpt_interface.py              # (Optional) daily summary text generation or advanced logic with OpenAI
+│
+├── backtesting/
+│   ├── backtester.py                     # The main backtesting framework that orchestrates historical runs
+│   └── simulation_engine.py              # Lower-level simulation logic (minute-by-minute replay, fill assumptions, etc.)
+│
+├── ui/
+│   └── app.py                            # (Optional) PyQt or other GUI to show positions, logs, charts, etc.
+│
+├── utils/
+│   ├── logger.py                         # Global logging utility
+│   ├── email_alerts.py                   # Sends daily summary & error alerts via email
+│   └── helpers.py                        # Misc helper functions (time conversions, file i/o, string utilities, etc.)
+│
+├── data/
+│   ├── logs/                             # Folder to hold:
+│   │   ├── symbol_logs/                  #   - Per-symbol logs (Step 2 info & updates)
+│   │   └── trade_logs/                   #   - Per-trade “experiment” data (Step 5)
+│   └── backtest_results/                 # (Optional) place to store backtest trade logs or aggregated performance
+│
+├── requirements.txt                      # All Python dependencies
+└── README.md                             # Project documentation & usage instructions
